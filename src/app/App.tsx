@@ -109,7 +109,7 @@ function HeroPortrait() {
     });
   };
 
-  const mask = `radial-gradient(circle 150px at ${lens.x}% ${lens.y}%, #000 0%, #000 55%, transparent 78%)`;
+  const mask = `radial-gradient(circle 450px at ${lens.x}% ${lens.y}%, #000 0%, #000 55%, transparent 78%)`;
 
   return (
     <div
@@ -127,7 +127,7 @@ function HeroPortrait() {
         src={heroBeskapImage}
         alt=""
         aria-hidden="true"
-        className="absolute inset-0 w-full h-full object-contain object-bottom transition-opacity duration-200 ease-out pointer-events-none"
+        className="absolute top-0 left-0 w-full h-auto transition-opacity duration-200 ease-out pointer-events-none"
         style={{
           opacity: lens.active ? 1 : 0,
           WebkitMaskImage: mask,
