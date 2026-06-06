@@ -131,15 +131,15 @@ function HeroSection() {
             </ul>
           </div>
 
-          <div className="flex flex-wrap gap-[12px]">
-            <FancyLinkButton href="#contact">
+          <div className="flex flex-wrap gap-[12px] max-[400px]:flex-col">
+            <FancyLinkButton href="#contact" className="max-[400px]:w-full">
               <Calendar className="size-[16px]" />
               Let's Collaborate
             </FancyLinkButton>
             <a
               href="https://drive.google.com/uc?export=download&id=1JGQatYz2f3qvOLdgpjrvcrAZfqYghyLN"
               download="Radya-Rahman-Resume.pdf"
-              className="inline-flex items-center justify-center gap-[8px] rounded-[10px] px-[16px] py-[10px] text-[14px] font-normal text-white border border-white/20 bg-white/5 hover:bg-white/10 transition-colors"
+              className="inline-flex items-center justify-center gap-[8px] rounded-[10px] px-[16px] py-[10px] text-[14px] font-normal text-white border border-white/20 bg-white/5 hover:bg-white/10 transition-colors max-[400px]:w-full"
             >
               <FileText className="size-[16px]" />
               Download Resume
