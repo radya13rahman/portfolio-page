@@ -1,5 +1,5 @@
 import svgPaths from "../imports/LandingPagePortfolioDesktop/svg-tt1e977ne4";
-import heroImage from "../imports/LandingPagePortfolioDesktop/dea0e01553c2241aed7423833326af4aae99cafb.webp";
+import heroImage from "../imports/image-hero.webp";
 import heroBgImage from "../imports/image-4.webp";
 import lightbridgeImg from "../imports/image.webp";
 import lightbridgeImg2 from "../imports/Screenshot_2026-06-06_at_16.20.21.webp";
