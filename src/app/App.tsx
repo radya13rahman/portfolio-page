@@ -104,7 +104,8 @@ function HeroSection() {
         <div className="flex flex-col gap-[40px] items-start w-full md:w-[590px] relative z-10">
           <div className="flex flex-col gap-[24px] w-full">
             <h1 className="text-white text-[36px] md:text-[56px] tracking-[0.48px] leading-[1.1]">
-              A Product Designer &amp; Researcher
+              A Product Designer <br />
+              &amp; Researcher
             </h1>
             <p className="text-[#dfdfdf] text-[16px] leading-[1.5] tracking-[-0.16px]">
               Radya Amirur is a product designer and researcher with 4 years of experience in iOS and web interfaces. Proficient in tools like Figma, Adobe Suites, Sketch, and Framer, he combines design with research and usability testing. Radya has shipped apps featured on the App Store via Apple Developer Academy 2023 and won the WWDC23 Swift Student Challenge. He now uses AI tools like Claude Code and Figma AI to enhance creativity and efficiency.
@@ -155,7 +156,8 @@ function CompanyExperience() {
       <div className="max-w-[1442px] mx-auto px-[24px] min-[768px]:px-[48px] min-[1024px]:px-[64px] min-[1200px]:px-[120px] flex flex-col min-[1200px]:flex-row min-[1200px]:items-center min-[1200px]:justify-between gap-[40px]">
         <div className="flex flex-col gap-[16px] max-w-[603px]">
           <h2 className="text-white text-[24px] md:text-[32px] tracking-[0.32px] leading-[1.1]">
-            Got experience with all kinds of companies
+            Got experience <br />
+            with all kinds of companies
           </h2>
           <p className="text-[#dfdfdf] text-[16px] leading-[1.5] tracking-[-0.16px]">
             Startups, big companies, overseas agencies, working on existing stuff, or building from scratch
