@@ -3,7 +3,7 @@ import logo from "../../../imports/ScrollLogo/logo-replace.webp";
 export function LogoMarquee() {
   const sets = Array.from({ length: 4 });
   return (
-    <div className="w-full overflow-hidden opacity-30">
+    <div className="w-full overflow-hidden opacity-60">
       <div className="flex w-max animate-[marquee_45s_linear_infinite]">
         {sets.map((_, i) => (
           <img
