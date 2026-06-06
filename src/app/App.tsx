@@ -1,3 +1,5 @@
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "motion/react";
 import svgPaths from "../imports/LandingPagePortfolioDesktop/svg-tt1e977ne4";
 import heroImage from "../imports/image-hero.webp";
 import heroBgImage from "../imports/image-4.webp";
@@ -93,24 +95,48 @@ const projects: GalleryProject[] = [
 ];
 
 function HeroSection() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
+  const portraitY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+
+  const container = {
+    hidden: {},
+    show: { transition: { staggerChildren: 0.14, delayChildren: 0.1 } },
+  };
+  const item = {
+    hidden: { opacity: 0, y: 28 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } },
+  };
+
   return (
-    <section className="bg-[#151515] relative overflow-hidden min-h-[900px] md:min-h-[900px]">
-      <ImageWithFallback
-        src={heroBgImage}
-        alt=""
-        className="absolute inset-0 w-full h-full object-cover pointer-events-none"
-      />
+    <section ref={sectionRef} className="bg-[#151515] relative overflow-hidden min-h-[900px] md:min-h-[900px]">
+      <motion.div style={{ y: bgY }} className="absolute inset-0 -top-[10%] h-[120%] pointer-events-none">
+        <ImageWithFallback
+          src={heroBgImage}
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+      </motion.div>
       <div className="relative max-w-[1442px] mx-auto px-[24px] min-[768px]:px-[48px] min-[1024px]:px-[64px] min-[1200px]:px-[120px] py-[120px] md:py-0 md:h-[900px] flex items-center">
-        <div className="flex flex-col gap-[40px] items-start w-full md:w-[590px] relative z-10">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          animate="show"
+          className="flex flex-col gap-[40px] items-start w-full md:w-[590px] relative z-10"
+        >
           <div className="flex flex-col gap-[24px] w-full">
-            <h1 className="text-white text-[36px] md:text-[56px] tracking-[0.48px] leading-[1.1]">
+            <motion.h1 variants={item} className="text-white text-[36px] md:text-[56px] tracking-[0.48px] leading-[1.1]">
               A Product Designer <br />
               &amp; Researcher
-            </h1>
-            <p className="text-[#dfdfdf] text-[16px] leading-[1.5] tracking-[-0.16px]">
+            </motion.h1>
+            <motion.p variants={item} className="text-[#dfdfdf] text-[16px] leading-[1.5] tracking-[-0.16px]">
               Radya Amirur is a product designer and researcher with 4 years of experience in iOS and web interfaces. Proficient in tools like Figma, Adobe Suites, Sketch, and Framer, he combines design with research and usability testing. Radya has shipped apps featured on the App Store via Apple Developer Academy 2023 and won the WWDC23 Swift Student Challenge. He now uses AI tools like Claude Code and Figma AI to enhance creativity and efficiency.
-            </p>
-            <ul className="list-disc pl-[20px] text-white text-[16px] leading-[1.5] tracking-[-0.16px]">
+            </motion.p>
+            <motion.ul variants={item} className="list-disc pl-[20px] text-white text-[16px] leading-[1.5] tracking-[-0.16px]">
               <li className="mb-[4px]">
                 <span className="font-bold">Location </span>
                 : <span className="text-[#dfdfdf]">Surakarta, Indonesia (+62)</span>
@@ -119,10 +145,10 @@ function HeroSection() {
                 <span className="font-bold">Time Zone </span>
                 : <span className="text-[#dfdfdf]">Jakarta (GMT+7)</span>
               </li>
-            </ul>
+            </motion.ul>
           </div>
 
-          <div className="flex flex-wrap gap-[12px] max-[400px]:flex-col max-[400px]:w-full">
+          <motion.div variants={item} className="flex flex-wrap gap-[12px] max-[400px]:flex-col max-[400px]:w-full">
             <FancyLinkButton href="#contact" className="max-[400px]:w-full max-[400px]:justify-center">
               <Calendar className="size-[16px]" />
               Let's Collaborate
@@ -135,16 +161,22 @@ function HeroSection() {
               <FileText className="size-[16px]" />
               Download Resume
             </a>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        <div className="hidden min-[1200px]:block absolute right-[120px] bottom-0 w-[45vw] max-w-[760px] pointer-events-none">
+        <motion.div
+          style={{ y: portraitY }}
+          initial={{ opacity: 0, x: 60 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+          className="hidden min-[1200px]:block absolute right-[120px] bottom-0 w-[45vw] max-w-[760px] pointer-events-none"
+        >
           <ImageWithFallback
             src={heroImage}
             alt="Radya Rahman portrait"
             className="block w-full h-auto ml-auto"
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   );
