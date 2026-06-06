@@ -15,6 +15,7 @@ import appnigmaImg from "../imports/Screenshot_2026-06-06_at_15.39.54.webp";
 import parksImg from "../imports/Screenshot_2026-06-06_at_15.45.53.webp";
 import layersImg from "../imports/Screenshot_2026-06-06_at_15.46.59.webp";
 import dribbbleImg from "../imports/Screenshot_2026-06-06_at_15.49.05.webp";
+import contactBg from "../imports/contact-bg.webp";
 import { ImageWithFallback } from "./components/figma/ImageWithFallback";
 import { ScrollProgress } from "./components/landing/ScrollProgress";
 import { LogoMarquee } from "./components/landing/LogoMarquee";
@@ -181,7 +182,8 @@ function CompanyExperience() {
 
 function ContactSection() {
   return (
-    <section id="contact" className="bg-[#171717] py-[60px] md:py-[80px]">
+    <section id="contact" className="bg-[#171717] py-[60px] md:py-[80px] relative overflow-hidden">
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20 pointer-events-none" style={{ backgroundImage: `url(${contactBg})` }} />
       <div className="max-w-[1442px] mx-auto px-[24px] min-[768px]:px-[48px] min-[1024px]:px-[64px] min-[1200px]:px-[120px] flex flex-col gap-[60px] md:gap-[80px] items-center">
         <h2 className="text-white text-[24px] md:text-[32px] tracking-[0.32px] text-center">
           Ready to build great product together
