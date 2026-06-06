@@ -133,7 +133,7 @@ function HeroPortrait() {
         src={heroBeskapImage}
         alt=""
         aria-hidden="true"
-        className="absolute top-0 left-0 w-full h-auto pointer-events-none"
+        className="absolute top-0 left-[4px] w-full h-auto pointer-events-none"
         style={{
           opacity: lens.active ? 1 : 0,
           WebkitMaskImage: revealMask,
