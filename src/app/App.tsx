@@ -102,17 +102,10 @@ function HeroSection() {
       />
       <div className="relative max-w-[1442px] mx-auto px-[24px] min-[768px]:px-[48px] min-[1024px]:px-[64px] min-[1200px]:px-[120px] py-[120px] md:py-0 md:h-[900px] flex items-center">
         <div className="flex flex-col gap-[40px] items-start w-full md:w-[590px] relative z-10">
-          <div className="flex flex-col gap-[8px] w-full">
-            <h1 className="text-white text-[28px] md:text-[48px] tracking-[0.48px]">
-              Know Radya Better, <br />
-              Who is He?
-            </h1>
-          </div>
-
           <div className="flex flex-col gap-[24px] w-full">
-            <h2 className="text-white text-[24px] md:text-[32px] tracking-[0.32px]">
+            <h1 className="text-white text-[36px] md:text-[56px] tracking-[0.48px]">
               A Product Designer &amp; Researcher
-            </h2>
+            </h1>
             <p className="text-[#dfdfdf] text-[16px] leading-[1.5] tracking-[-0.16px]">
               Radya Amirur is a product designer and researcher with 4 years of experience in iOS and web interfaces. Proficient in tools like Figma, Adobe Suites, Sketch, and Framer, he combines design with research and usability testing. Radya has shipped apps featured on the App Store via Apple Developer Academy 2023 and won the WWDC23 Swift Student Challenge. He now uses AI tools like Claude Code and Figma AI to enhance creativity and efficiency.
             </p>
