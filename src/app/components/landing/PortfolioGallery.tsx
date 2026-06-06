@@ -36,7 +36,7 @@ function Card({ project, className = "" }: { project: GalleryProject; className?
           key={i}
           src={src}
           alt={`${project.name} ${i + 1}`}
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 group-hover:scale-[1.03] ${
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
             i === index ? "opacity-100" : "opacity-0"
           }`}
         />
