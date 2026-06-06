@@ -231,8 +231,12 @@ function HeroSection() {
 
 function CompanyExperience() {
   return (
-    <section className="bg-[#171717] py-[60px] md:py-[80px]">
-      <div className="max-w-[1442px] mx-auto px-[24px] min-[768px]:px-[48px] min-[1024px]:px-[64px] min-[1200px]:px-[120px] flex flex-col min-[1200px]:flex-row min-[1200px]:items-center min-[1200px]:justify-between gap-[40px]">
+    <section className="bg-[#171717] py-[60px] md:py-[80px] relative overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none">
+        <ImageWithFallback src={heroBgImage} alt="" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-[#171717]/85" />
+      </div>
+      <div className="relative max-w-[1442px] mx-auto px-[24px] min-[768px]:px-[48px] min-[1024px]:px-[64px] min-[1200px]:px-[120px] flex flex-col min-[1200px]:flex-row min-[1200px]:items-center min-[1200px]:justify-between gap-[40px]">
         <div className="flex flex-col gap-[16px] max-w-[603px]">
           <h2 className="text-white text-[24px] md:text-[32px] tracking-[0.32px] leading-[1.1]">
             Got experience <br />
