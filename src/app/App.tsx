@@ -1,7 +1,8 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import svgPaths from "../imports/LandingPagePortfolioDesktop/svg-tt1e977ne4";
 import heroImage from "../imports/image-hero.webp";
+import heroBeskapImage from "../imports/image-hero-beskap.webp";
 import heroBgImage from "../imports/image-4.webp";
 import lightbridgeImg from "../imports/image.webp";
 import lightbridgeImg2 from "../imports/Screenshot_2026-06-06_at_16.20.21.webp";
@@ -94,6 +95,49 @@ const projects: GalleryProject[] = [
   },
 ];
 
+function HeroPortrait() {
+  const ref = useRef<HTMLDivElement>(null);
+  const [lens, setLens] = useState({ x: 50, y: 50, active: false });
+
+  const handleMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = ref.current?.getBoundingClientRect();
+    if (!rect) return;
+    setLens({
+      x: ((e.clientX - rect.left) / rect.width) * 100,
+      y: ((e.clientY - rect.top) / rect.height) * 100,
+      active: true,
+    });
+  };
+
+  const mask = `radial-gradient(circle 150px at ${lens.x}% ${lens.y}%, #000 0%, #000 55%, transparent 78%)`;
+
+  return (
+    <div
+      ref={ref}
+      onMouseMove={handleMove}
+      onMouseLeave={() => setLens((l) => ({ ...l, active: false }))}
+      className="relative w-full cursor-crosshair"
+    >
+      <ImageWithFallback
+        src={heroImage}
+        alt="Radya Rahman portrait"
+        className="block w-full h-auto"
+      />
+      <img
+        src={heroBeskapImage}
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 w-full h-full object-contain object-bottom transition-opacity duration-200 ease-out pointer-events-none"
+        style={{
+          opacity: lens.active ? 1 : 0,
+          WebkitMaskImage: mask,
+          maskImage: mask,
+        }}
+      />
+    </div>
+  );
+}
+
 function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
@@ -169,13 +213,9 @@ function HeroSection() {
           initial={{ opacity: 0, x: 60 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-          className="hidden min-[1200px]:block absolute right-[120px] bottom-0 w-[45vw] max-w-[760px] pointer-events-none"
+          className="hidden min-[1200px]:block absolute right-[120px] bottom-0 w-[45vw] max-w-[760px]"
         >
-          <ImageWithFallback
-            src={heroImage}
-            alt="Radya Rahman portrait"
-            className="block w-full h-auto ml-auto"
-          />
+          <HeroPortrait />
         </motion.div>
       </div>
     </section>
