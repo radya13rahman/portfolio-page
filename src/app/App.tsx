@@ -131,8 +131,8 @@ function HeroSection() {
             </ul>
           </div>
 
-          <div className="flex flex-wrap gap-[12px] max-[400px]:flex-col">
-            <FancyLinkButton href="#contact" className="max-[400px]:w-full">
+          <div className="flex flex-wrap gap-[12px] max-[400px]:flex-col max-[400px]:w-full">
+            <FancyLinkButton href="#contact" className="max-[400px]:w-full max-[400px]:justify-center">
               <Calendar className="size-[16px]" />
               Let's Collaborate
             </FancyLinkButton>
