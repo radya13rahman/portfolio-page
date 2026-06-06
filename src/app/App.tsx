@@ -5,6 +5,7 @@ import heroImage from "../imports/image-hero.webp";
 import heroBeskapImage from "../imports/image-hero-beskap.webp";
 import heroBgImage from "../imports/image-4.webp";
 import ctaBgImage from "../imports/image-cta-bg.webp";
+import textureBgImage from "../imports/image-texture.webp";
 import lightbridgeImg from "../imports/image.webp";
 import lightbridgeImg2 from "../imports/Screenshot_2026-06-06_at_16.20.21.webp";
 import lightbridgeImg3 from "../imports/Screenshot_2026-06-06_at_16.20.31.webp";
@@ -233,8 +234,8 @@ function CompanyExperience() {
   return (
     <section className="bg-[#171717] py-[60px] md:py-[80px] relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
-        <ImageWithFallback src={heroBgImage} alt="" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-[#171717]/85" />
+        <ImageWithFallback src={textureBgImage} alt="" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-[#171717]/70" />
       </div>
       <div className="relative max-w-[1442px] mx-auto px-[24px] min-[768px]:px-[48px] min-[1024px]:px-[64px] min-[1200px]:px-[120px] flex flex-col min-[1200px]:flex-row min-[1200px]:items-center min-[1200px]:justify-between gap-[40px]">
         <div className="flex flex-col gap-[16px] max-w-[603px]">
