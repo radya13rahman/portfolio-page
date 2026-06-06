@@ -4,6 +4,7 @@ import svgPaths from "../imports/LandingPagePortfolioDesktop/svg-tt1e977ne4";
 import heroImage from "../imports/image-hero.webp";
 import heroBeskapImage from "../imports/image-hero-beskap.webp";
 import heroBgImage from "../imports/image-4.webp";
+import ctaBgImage from "../imports/image-cta-bg.webp";
 import lightbridgeImg from "../imports/image.webp";
 import lightbridgeImg2 from "../imports/Screenshot_2026-06-06_at_16.20.21.webp";
 import lightbridgeImg3 from "../imports/Screenshot_2026-06-06_at_16.20.31.webp";
@@ -230,8 +231,9 @@ function HeroSection() {
 
 function CompanyExperience() {
   return (
-    <section className="bg-[#171717] py-[60px] md:py-[80px]">
-      <div className="max-w-[1442px] mx-auto px-[24px] min-[768px]:px-[48px] min-[1024px]:px-[64px] min-[1200px]:px-[120px] flex flex-col min-[1200px]:flex-row min-[1200px]:items-center min-[1200px]:justify-between gap-[40px]">
+    <section className="bg-[#171717] py-[60px] md:py-[80px] relative overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none opacity-[0.04]" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`, backgroundSize: '200px 200px' }} />
+      <div className="relative max-w-[1442px] mx-auto px-[24px] min-[768px]:px-[48px] min-[1024px]:px-[64px] min-[1200px]:px-[120px] flex flex-col min-[1200px]:flex-row min-[1200px]:items-center min-[1200px]:justify-between gap-[40px]">
         <div className="flex flex-col gap-[16px] max-w-[603px]">
           <h2 className="text-white text-[24px] md:text-[32px] tracking-[0.32px] leading-[1.1]">
             Got experience <br />
@@ -261,10 +263,11 @@ function ContactSection() {
     <section ref={sectionRef} id="contact" className="bg-[#171717] py-[60px] md:py-[80px] relative overflow-hidden">
       <motion.div style={{ y: bgY }} className="absolute inset-0 -top-[15%] h-[130%] pointer-events-none">
         <ImageWithFallback
-          src={heroBgImage}
+          src={ctaBgImage}
           alt=""
           className="absolute inset-0 w-full h-full object-cover"
         />
+        <div className="absolute inset-0 bg-black/60" />
       </motion.div>
       <div className="relative max-w-[1442px] mx-auto px-[24px] min-[768px]:px-[48px] min-[1024px]:px-[64px] min-[1200px]:px-[120px] flex flex-col gap-[60px] md:gap-[80px] items-center">
         <h2 className="text-white text-[24px] md:text-[32px] tracking-[0.32px] leading-[1.1] text-center">
