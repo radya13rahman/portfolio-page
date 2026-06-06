@@ -4,6 +4,7 @@ import svgPaths from "../imports/LandingPagePortfolioDesktop/svg-tt1e977ne4";
 import heroImage from "../imports/image-hero.webp";
 import heroBeskapImage from "../imports/image-hero-beskap.webp";
 import heroBgImage from "../imports/image-4.webp";
+import ctaBgImage from "../imports/image-cta-bg.webp";
 import lightbridgeImg from "../imports/image.webp";
 import lightbridgeImg2 from "../imports/Screenshot_2026-06-06_at_16.20.21.webp";
 import lightbridgeImg3 from "../imports/Screenshot_2026-06-06_at_16.20.31.webp";
@@ -261,7 +262,7 @@ function ContactSection() {
     <section ref={sectionRef} id="contact" className="bg-[#171717] py-[60px] md:py-[80px] relative overflow-hidden">
       <motion.div style={{ y: bgY }} className="absolute inset-0 -top-[15%] h-[130%] pointer-events-none">
         <ImageWithFallback
-          src={heroBgImage}
+          src={ctaBgImage}
           alt=""
           className="absolute inset-0 w-full h-full object-cover"
         />
