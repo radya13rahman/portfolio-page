@@ -107,9 +107,6 @@ function HeroSection() {
               Know Radya Better, <br />
               Who is He?
             </h1>
-            <p className="text-[#dfdfdf] text-[16px] tracking-[0.16px]">
-              by Radya Rahman
-            </p>
           </div>
 
           <div className="flex flex-col gap-[24px] w-full">
