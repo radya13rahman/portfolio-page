@@ -168,7 +168,7 @@ function CompanyExperience() {
             Startups, big companies, overseas agencies, working on existing stuff, or building from scratch
           </p>
         </div>
-        <div className="min-[801px]:flex-1 min-[801px]:max-w-[640px]">
+        <div className="w-full min-[1200px]:flex-1 min-[1200px]:max-w-[640px]">
           <LogoMarquee />
         </div>
       </div>
