@@ -38,7 +38,7 @@ const projects: GalleryProject[] = [
     tags: "Product Engineering · Website",
     category: "Website",
     image: walturnImg,
-    images: [walturnSlide1, walturnSlide2],
+    images: [walturnImg, walturnSlide1, walturnSlide2],
     link: "https://walturn.com",
   },
   {
