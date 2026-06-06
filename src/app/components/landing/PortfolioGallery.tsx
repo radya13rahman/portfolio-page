@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { motion } from "motion/react";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
-import textureBg from "../../imports/image-4.webp";
+import textureBg from "../../../imports/image-4.webp";
 import {
   Select,
   SelectContent,
