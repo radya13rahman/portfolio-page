@@ -109,8 +109,8 @@ function HeroPortrait() {
     });
   };
 
-  const revealMask = `radial-gradient(circle 450px at ${lens.x}% ${lens.y}%, #000 0%, #000 55%, transparent 78%)`;
-  const cutoutMask = `radial-gradient(circle 450px at ${lens.x}% ${lens.y}%, transparent 0%, transparent 55%, #000 78%)`;
+  const revealMask = `radial-gradient(circle 300px at ${lens.x}% ${lens.y}%, #000 0%, #000 55%, transparent 78%)`;
+  const cutoutMask = `radial-gradient(circle 300px at ${lens.x}% ${lens.y}%, transparent 0%, transparent 55%, #000 78%)`;
 
   return (
     <div
