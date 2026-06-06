@@ -6,6 +6,8 @@ import lightbridgeImg2 from "../imports/Screenshot_2026-06-06_at_16.20.21.webp";
 import lightbridgeImg3 from "../imports/Screenshot_2026-06-06_at_16.20.31.webp";
 import lightbridgeImg4 from "../imports/Screenshot_2026-06-06_at_16.20.39.webp";
 import walturnImg from "../imports/Screenshot_2026-06-06_at_15.32.09.webp";
+import walturnSlide1 from "../imports/walturn-1.webp";
+import walturnSlide2 from "../imports/walturn-2.webp";
 import rallyImg from "../imports/Screenshot_2026-06-06_at_15.32.18.webp";
 import radfolioImg from "../imports/Screenshot_2026-06-06_at_15.32.41.webp";
 import sproutFetchImg from "../imports/Screenshot_2026-06-06_at_15.36.04.webp";
@@ -36,6 +38,7 @@ const projects: GalleryProject[] = [
     tags: "Product Engineering · Website",
     category: "Website",
     image: walturnImg,
+    images: [walturnSlide1, walturnSlide2],
     link: "https://walturn.com",
   },
   {
