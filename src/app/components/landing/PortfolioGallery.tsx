@@ -92,7 +92,7 @@ export function PortfolioGallery({ projects }: { projects: GalleryProject[] }) {
     <section className="bg-[#151515] py-[60px] md:py-[80px] relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <ImageWithFallback src={textureBg} alt="" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-black/80" />
+        <div className="absolute inset-0 bg-black/92" />
       </div>
       <div className="relative max-w-[1442px] mx-auto px-[24px] min-[768px]:px-[48px] min-[1024px]:px-[64px] min-[1200px]:px-[120px] flex flex-col gap-[24px]">
         <div className="flex flex-col gap-[16px] min-[600px]:flex-row min-[600px]:items-center min-[600px]:justify-between mb-[16px]">
