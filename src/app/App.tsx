@@ -109,7 +109,8 @@ function HeroPortrait() {
     });
   };
 
-  const mask = `radial-gradient(circle 450px at ${lens.x}% ${lens.y}%, #000 0%, #000 55%, transparent 78%)`;
+  const revealMask = `radial-gradient(circle 450px at ${lens.x}% ${lens.y}%, #000 0%, #000 55%, transparent 78%)`;
+  const cutoutMask = `radial-gradient(circle 450px at ${lens.x}% ${lens.y}%, transparent 0%, transparent 55%, #000 78%)`;
 
   return (
     <div
@@ -118,20 +119,25 @@ function HeroPortrait() {
       onMouseLeave={() => setLens((l) => ({ ...l, active: false }))}
       className="relative w-full cursor-crosshair"
     >
-      <ImageWithFallback
+      <img
         src={heroImage}
         alt="Radya Rahman portrait"
         className="block w-full h-auto"
+        style={
+          lens.active
+            ? { WebkitMaskImage: cutoutMask, maskImage: cutoutMask }
+            : undefined
+        }
       />
       <img
         src={heroBeskapImage}
         alt=""
         aria-hidden="true"
-        className="absolute top-0 left-0 w-full h-auto transition-opacity duration-200 ease-out pointer-events-none"
+        className="absolute top-0 left-0 w-full h-auto pointer-events-none"
         style={{
           opacity: lens.active ? 1 : 0,
-          WebkitMaskImage: mask,
-          maskImage: mask,
+          WebkitMaskImage: revealMask,
+          maskImage: revealMask,
         }}
       />
     </div>
