@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import portfolioBg from "../../../imports/portfolio-bg.webp";
 import { motion } from "motion/react";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 import {
@@ -88,7 +89,8 @@ export function PortfolioGallery({ projects }: { projects: GalleryProject[] }) {
   );
 
   return (
-    <section className="bg-[#151515] py-[60px] md:py-[80px]">
+    <section className="bg-[#151515] py-[60px] md:py-[80px] relative overflow-hidden">
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20 pointer-events-none" style={{ backgroundImage: `url(${portfolioBg})` }} />
       <div className="max-w-[1442px] mx-auto px-[24px] min-[768px]:px-[48px] min-[1024px]:px-[64px] min-[1200px]:px-[120px] flex flex-col gap-[24px]">
         <div className="flex flex-col gap-[16px] min-[600px]:flex-row min-[600px]:items-center min-[600px]:justify-between mb-[16px]">
           <h2 className="text-white text-[24px] md:text-[32px] tracking-[0.32px]">
