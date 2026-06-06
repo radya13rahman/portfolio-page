@@ -10,7 +10,7 @@ export function LogoMarquee() {
             key={i}
             alt="company logos"
             src={logo}
-            className="h-[34px] w-auto object-contain pointer-events-none shrink-0 px-[20px]"
+            className="h-[48px] w-auto object-contain pointer-events-none shrink-0 px-[20px]"
           />
         ))}
       </div>
