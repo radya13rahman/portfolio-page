@@ -1,6 +1,6 @@
 import svgPaths from "../imports/LandingPagePortfolioDesktop/svg-tt1e977ne4";
 import heroImage from "../imports/LandingPagePortfolioDesktop/dea0e01553c2241aed7423833326af4aae99cafb.webp";
-import heroBgImage from "../imports/image-4.webp";
+import heroBgImage from "../imports/portfolio-bg.webp";
 import lightbridgeImg from "../imports/image.webp";
 import lightbridgeImg2 from "../imports/Screenshot_2026-06-06_at_16.20.21.webp";
 import lightbridgeImg3 from "../imports/Screenshot_2026-06-06_at_16.20.31.webp";
@@ -15,7 +15,7 @@ import appnigmaImg from "../imports/Screenshot_2026-06-06_at_15.39.54.webp";
 import parksImg from "../imports/Screenshot_2026-06-06_at_15.45.53.webp";
 import layersImg from "../imports/Screenshot_2026-06-06_at_15.46.59.webp";
 import dribbbleImg from "../imports/Screenshot_2026-06-06_at_15.49.05.webp";
-import contactBg from "../imports/contact-bg.webp";
+import contactBg from "../imports/cta-bg.webp";
 import { ImageWithFallback } from "./components/figma/ImageWithFallback";
 import { ScrollProgress } from "./components/landing/ScrollProgress";
 import { LogoMarquee } from "./components/landing/LogoMarquee";
