@@ -111,7 +111,6 @@ function HeroPortrait() {
 
   const revealMask = `radial-gradient(circle 300px at ${lens.x}% ${lens.y}%, #000 0%, #000 55%, transparent 78%)`;
   const cutoutMask = `radial-gradient(circle 300px at ${lens.x}% ${lens.y}%, transparent 0%, transparent 55%, #000 78%)`;
-  const glow = `radial-gradient(circle 300px at ${lens.x}% ${lens.y}%, rgba(255,196,64,0.35) 0%, rgba(255,184,48,0.5) 52%, rgba(255,170,32,0.65) 64%, rgba(255,170,32,0) 82%)`;
 
   return (
     <div
@@ -139,14 +138,6 @@ function HeroPortrait() {
           opacity: lens.active ? 1 : 0,
           WebkitMaskImage: revealMask,
           maskImage: revealMask,
-        }}
-      />
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 pointer-events-none transition-opacity duration-150 mix-blend-screen"
-        style={{
-          opacity: lens.active ? 1 : 0,
-          background: glow,
         }}
       />
     </div>
