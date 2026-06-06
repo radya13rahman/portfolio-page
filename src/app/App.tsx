@@ -145,7 +145,21 @@ function HeroPortrait() {
   );
 }
 
+function useJakartaTime() {
+  const [time, setTime] = useState(() =>
+    new Date().toLocaleTimeString("en-US", { timeZone: "Asia/Jakarta", hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false })
+  );
+  useEffect(() => {
+    const id = setInterval(() => {
+      setTime(new Date().toLocaleTimeString("en-US", { timeZone: "Asia/Jakarta", hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false }));
+    }, 1000);
+    return () => clearInterval(id);
+  }, []);
+  return time;
+}
+
 function HeroSection() {
+  const jakartaTime = useJakartaTime();
   const sectionRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -194,7 +208,8 @@ function HeroSection() {
               </li>
               <li>
                 <span className="font-bold">Time Zone </span>
-                : <span className="text-[#dfdfdf]">Jakarta (GMT+7)</span>
+                : <span className="text-[#dfdfdf]">Jakarta (GMT+7) — </span>
+                <span className="text-[#dfdfdf] font-mono tabular-nums">{jakartaTime}</span>
               </li>
             </motion.ul>
           </div>
