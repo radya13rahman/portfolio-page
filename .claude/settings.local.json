@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm install *)",
+      "Bash(pnpm dev *)",
+      "Bash(curl -s http://localhost:5173)",
+      "Bash(vercel --version)",
+      "Bash(vercel whoami *)",
+      "Bash(vercel link *)",
+      "Bash(vercel --yes --prod --scope radya13rahmans-projects)",
+      "Bash(python3 -c ' *)",
+      "Bash(vercel --help)",
+      "Read(//Users/radya13rahman/.local/share/com.vercel.cli/**)",
+      "Read(//Users/radya13rahman/.config/vercel/**)",
+      "Read(//Users/radya13rahman/.local/share/**)",
+      "Read(//Users/radya13rahman/**)",
+      "Bash(gh auth *)",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git commit *)"
+    ]
+  }
+}
