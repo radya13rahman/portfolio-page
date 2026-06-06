@@ -147,7 +147,7 @@ function HeroSection() {
           </div>
         </div>
 
-        <div className="hidden min-[1200px]:block absolute right-0 bottom-0 w-[860px] pointer-events-none">
+        <div className="hidden min-[1200px]:block absolute right-0 bottom-0 w-[760px] pointer-events-none">
           <ImageWithFallback
             src={heroImage}
             alt="Radya Rahman portrait"
