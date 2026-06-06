@@ -103,7 +103,7 @@ function HeroSection() {
       <div className="relative max-w-[1442px] mx-auto px-[24px] min-[768px]:px-[48px] min-[1024px]:px-[64px] min-[1200px]:px-[120px] py-[120px] md:py-0 md:h-[900px] flex items-center">
         <div className="flex flex-col gap-[40px] items-start w-full md:w-[590px] relative z-10">
           <div className="flex flex-col gap-[24px] w-full">
-            <h1 className="text-white text-[36px] md:text-[56px] tracking-[0.48px]">
+            <h1 className="text-white text-[36px] md:text-[56px] tracking-[0.48px] leading-[1.1]">
               A Product Designer &amp; Researcher
             </h1>
             <p className="text-[#dfdfdf] text-[16px] leading-[1.5] tracking-[-0.16px]">
@@ -154,7 +154,7 @@ function CompanyExperience() {
     <section className="bg-[#171717] py-[60px] md:py-[80px]">
       <div className="max-w-[1442px] mx-auto px-[24px] min-[768px]:px-[48px] min-[1024px]:px-[64px] min-[1200px]:px-[120px] flex flex-col min-[1200px]:flex-row min-[1200px]:items-center min-[1200px]:justify-between gap-[40px]">
         <div className="flex flex-col gap-[16px] max-w-[603px]">
-          <h2 className="text-white text-[24px] md:text-[32px] tracking-[0.32px]">
+          <h2 className="text-white text-[24px] md:text-[32px] tracking-[0.32px] leading-[1.1]">
             Got experience with all kinds of companies
           </h2>
           <p className="text-[#dfdfdf] text-[16px] leading-[1.5] tracking-[-0.16px]">
@@ -173,7 +173,7 @@ function ContactSection() {
   return (
     <section id="contact" className="bg-[#171717] py-[60px] md:py-[80px]">
       <div className="max-w-[1442px] mx-auto px-[24px] min-[768px]:px-[48px] min-[1024px]:px-[64px] min-[1200px]:px-[120px] flex flex-col gap-[60px] md:gap-[80px] items-center">
-        <h2 className="text-white text-[24px] md:text-[32px] tracking-[0.32px] text-center">
+        <h2 className="text-white text-[24px] md:text-[32px] tracking-[0.32px] leading-[1.1] text-center">
           Ready to build great product together
         </h2>
 
