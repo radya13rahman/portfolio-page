@@ -1,37 +1,37 @@
 import { motion } from "motion/react";
+import kennardImg from "../../../imports/avatar-kennard.webp";
+import tiffanyImg from "../../../imports/avatar-tiffany.webp";
+import gregoriusImg from "../../../imports/avatar-gregorius.webp";
+import hannahImg from "../../../imports/avatar-hannah.webp";
 
 const testimonials = [
   {
     name: "Kennard Sugirotok",
     title: "Full Stack Developer",
     agency: "Techflouu",
-    initials: "KS",
-    color: "bg-gradient-to-br from-blue-600 to-blue-800",
+    photo: kennardImg,
     text: "Working with Radya on our website project was a fantastic experience. He doesn't just create visually stunning interfaces; his proactive communication makes the entire project lifecycle incredibly smooth. If you need a reliable UI/UX designer who truly understands how to collaborate effectively and deliver modern, user-centric designs, Radya is the person you want on your team.",
   },
   {
     name: "Tiffany Eunike",
     title: "Ops and Product Management",
     agency: "Techflouu",
-    initials: "TE",
-    color: "bg-gradient-to-br from-rose-500 to-pink-700",
+    photo: tiffanyImg,
     text: "Radya is a kind and creative individual who brings a positive attitude to the workplace. It was a pleasure having him on the team, and I appreciated his contributions to our UI/UX projects.",
-  },
-  {
-    name: "Hannah Nur Azzahrah",
-    title: "UI/UX Designer",
-    agency: "Apple Developer Academy",
-    initials: "HN",
-    color: "bg-gradient-to-br from-purple-600 to-violet-800",
-    text: "Radya and I are fellow learners at the Apple Developer Academy and he consistently impresses me with his advanced prototyping skills and deep expertise in Figma. His determination to learn and experiment with new techniques is truly inspiring. His ability to provide constructive feedback and actively participate in brainstorming sessions makes him an invaluable partner in any design process.",
   },
   {
     name: "Gregorius Yuristama",
     title: "iOS Developer",
     agency: "Apple Developer Academy · BCA Digital",
-    initials: "GY",
-    color: "bg-gradient-to-br from-orange-500 to-amber-700",
+    photo: gregoriusImg,
     text: "I am pleased to provide my endorsement for Radya, a skilled UI/UX professional with whom I've had the pleasure of collaborating. Radya's exceptional design acumen has consistently produced visually appealing and user-centric solutions. His ability to think innovatively and outside the box has greatly contributed to the success of our projects.",
+  },
+  {
+    name: "Hannah Nur Azzahrah",
+    title: "UI/UX Designer",
+    agency: "Apple Developer Academy",
+    photo: hannahImg,
+    text: "Radya and I are fellow learners at the Apple Developer Academy and he consistently impresses me with his advanced prototyping skills and deep expertise in Figma. His determination to learn and experiment with new techniques is truly inspiring. His ability to provide constructive feedback and actively participate in brainstorming sessions makes him an invaluable partner in any design process.",
   },
 ];
 
@@ -58,9 +58,11 @@ export function Testimonials() {
             >
               {/* Avatar + person info */}
               <div className="flex items-center gap-[14px]">
-                <div className={`size-[44px] rounded-full flex items-center justify-center shrink-0 ${t.color}`}>
-                  <span className="text-white text-[13px] font-semibold tracking-[0.5px]">{t.initials}</span>
-                </div>
+                <img
+                  src={t.photo}
+                  alt={t.name}
+                  className="size-[44px] rounded-full object-cover shrink-0"
+                />
                 <div className="flex flex-col gap-[2px]">
                   <span className="text-white text-[14px] font-medium leading-tight">{t.name}</span>
                   <span className="text-white/40 text-[12px] leading-tight">{t.title} · <span className="text-white/60">{t.agency}</span></span>
