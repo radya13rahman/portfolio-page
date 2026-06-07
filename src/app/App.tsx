@@ -194,6 +194,10 @@ function HeroSection() {
           className="flex flex-col gap-[40px] items-start w-full md:w-[590px] relative z-10"
         >
           <div className="flex flex-col gap-[24px] w-full">
+            <motion.div variants={item} className="inline-flex items-center gap-[8px] self-start rounded-full border border-white/20 bg-white/5 px-[12px] py-[6px]">
+              <span className="size-[6px] rounded-full bg-green-400 animate-pulse" />
+              <span className="text-[12px] text-white/80 tracking-[0.2px]">3 Seats Available · Q3 2026</span>
+            </motion.div>
             <motion.h1 variants={item} className="text-white text-[36px] md:text-[56px] tracking-[0.48px] leading-[1.1]">
               A Product Designer <br />
               &amp; Researcher
