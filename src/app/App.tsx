@@ -343,7 +343,7 @@ function useLenis() {
 export default function App() {
   useLenis();
   return (
-    <div className="min-h-screen bg-[#151515] w-full cursor-none">
+    <div className="min-h-screen bg-[#151515] w-full overflow-x-hidden cursor-none">
       <CustomCursor />
       <NavBar />
       <HeroSection />
