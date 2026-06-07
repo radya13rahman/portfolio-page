@@ -39,7 +39,7 @@ const testimonials = [
 export function Testimonials() {
   return (
     <section id="testimonials" className="bg-[#0A0A0A] py-[60px] md:py-[80px] relative overflow-hidden">
-      <GridPattern />
+      <GridPattern diagonal />
       <div className="relative w-full min-[1000px]:w-[70%] max-w-[1442px] mx-auto px-[24px] min-[768px]:px-[48px] min-[1024px]:px-[64px] flex flex-col gap-[24px]">
         <div className="flex flex-col gap-[8px] mb-[16px]">
           <h2 className="text-white text-[24px] md:text-[32px] tracking-[0.32px] leading-[1.1]">
