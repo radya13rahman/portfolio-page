@@ -20,8 +20,8 @@ export function NavBar() {
       }`}
     >
       <div className="max-w-[1442px] mx-auto px-[24px] min-[768px]:px-[48px] min-[1024px]:px-[64px] min-[1200px]:px-[120px] h-[56px] flex items-center justify-between">
-        <a href="#" className="text-white text-[15px] font-medium tracking-[-0.3px] hover:opacity-70 transition-opacity">
-          Radya Rahman
+        <a href="#" className="hover:opacity-70 transition-opacity">
+          <img src="/favicon.png" alt="Radya Rahman" className="size-[32px] rounded-full" />
         </a>
 
         <nav className="hidden min-[600px]:flex items-center gap-[32px]">
