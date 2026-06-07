@@ -18,7 +18,7 @@ const skillGroups = [
 export function Skills() {
   return (
     <section className="bg-[#151515] py-[60px] md:py-[80px] border-t border-white/5">
-      <div className="max-w-[1442px] mx-auto px-[24px] min-[768px]:px-[48px] min-[1024px]:px-[64px] min-[1200px]:px-[120px] flex flex-col gap-[40px]">
+      <div className="w-full min-[1000px]:w-[70%] max-w-[1442px] mx-auto px-[24px] min-[768px]:px-[48px] min-[1024px]:px-[64px] flex flex-col gap-[40px]">
         <div className="flex flex-col gap-[8px]">
           <h2 className="text-white text-[24px] md:text-[32px] tracking-[0.32px] leading-[1.1]">
             Tools & Skills
