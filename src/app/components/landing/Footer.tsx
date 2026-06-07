@@ -49,7 +49,7 @@ export function Footer() {
               className="flex items-center gap-[6px] text-white/30 hover:text-white text-[13px] transition-colors"
             >
               {icon}
-              {label}
+              <span className="hidden min-[600px]:inline">{label}</span>
             </a>
           ))}
         </div>
