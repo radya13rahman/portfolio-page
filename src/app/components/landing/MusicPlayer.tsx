@@ -75,7 +75,6 @@ export function MusicPlayer() {
             className="fixed bottom-[64px] right-[12px] z-50 size-[176px] cursor-pointer"
           >
             <motion.video
-              src="/head.webm"
               poster="/head.webp"
               autoPlay
               loop
@@ -83,7 +82,11 @@ export function MusicPlayer() {
               playsInline
               style={{ rotate }}
               className="size-full object-contain"
-            />
+            >
+              {/* HEVC w/ alpha for Safari/iOS, VP9 webm for Chrome/Firefox */}
+              <source src="/head.mov" type='video/quicktime; codecs="hvc1"' />
+              <source src="/head.webm" type="video/webm" />
+            </motion.video>
           </motion.button>
         )}
       </AnimatePresence>

@@ -103,7 +103,10 @@
       "Bash(ffmpeg -y -i /tmp/g2/g_0060.png -filter_complex '[0:v]chromakey=0x00FE00:0.18:0.06,despill=type=green:mix=0.5[k];color=magenta:s=300x300[bg];[bg][k]overlay=shortest=1' /tmp/g2test.png)",
       "Bash(ffmpeg -y -i /Users/radya13rahman/Downloads/kling_20260607_作品_A_stylized_2584_0.mp4 -an -filter_complex [0:v]scale=480:-1,chromakey=0x00FE00:0.18:0.07,despill=type=green:mix=0.5[v] -map [v] -c:v libvpx-vp9 -pix_fmt yuva420p -b:v 0 -crf 30 public/head.webm)",
       "Bash(ffmpeg -y -i /tmp/g2/g_0060.png -vf \"scale=256:-1,chromakey=0x00FE00:0.18:0.07,despill=type=green:mix=0.5\" /tmp/poster2.png)",
-      "Bash(cwebp -q 88 /tmp/poster2.png -o public/head.webp)"
+      "Bash(cwebp -q 88 /tmp/poster2.png -o public/head.webp)",
+      "Bash(ffmpeg -hide_banner -encoders)",
+      "Bash(ffprobe -v error -show_entries stream=pix_fmt,codec_name,codec_tag_string -of default=noprint_wrappers=1 public/head.mov)",
+      "Bash(ffmpeg -y -i public/head.mov -ss 2 -frames:v 1 -filter_complex 'color=magenta:s=480x480[bg];[bg][0:v]overlay=shortest=1' /tmp/movcheck.png)"
     ]
   }
 }
