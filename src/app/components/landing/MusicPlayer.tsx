@@ -69,7 +69,7 @@ export function MusicPlayer() {
 
   return (
     <>
-      <audio ref={audioRef} src={TRACK_SRC} loop preload="auto" />
+      <audio ref={audioRef} src={TRACK_SRC} loop preload="none" />
 
       {/* Rotating head — sits above the music player */}
       <AnimatePresence>
