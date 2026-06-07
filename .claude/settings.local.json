@@ -121,7 +121,11 @@
       "Bash(ffmpeg -y -i \"src/imports/Screenshot_2026-06-06_at_15.45.53.webp\" -vf \"scale=480:-1\" /tmp/sc.png)",
       "Bash(ffprobe -v error -show_entries stream=width,height -of csv=p=0 src/imports/Screenshot_2026-06-06_at_15.45.53.webp)",
       "Bash(echo \"dims now: $\\(ffprobe -v error -show_entries stream=width,height -of csv=p=0 src/imports/Screenshot_2026-06-06_at_15.45.53.webp\\)\")",
-      "Bash(awk '{print $5, $9}')"
+      "Bash(awk '{print $5, $9}')",
+      "Read(//var/folders/0c/cnpv0zd50c33m5yp9t_w4llw0000gn/T/TemporaryItems/NSIRD_screencaptureui_6apJUn/**)",
+      "Bash(ffprobe -v error -show_entries format=duration -of csv=p=0 '/var/folders/0c/cnpv0zd50c33m5yp9t_w4llw0000gn/T/TemporaryItems/NSIRD_screencaptureui_6apJUn/Screen Recording 2026-06-07 at 19.38.33.mov')",
+      "Bash(ffmpeg -y -i '/var/folders/0c/cnpv0zd50c33m5yp9t_w4llw0000gn/T/TemporaryItems/NSIRD_screencaptureui_6apJUn/Screen Recording 2026-06-07 at 19.38.33.mov' -vf fps=4,scale=300:-1 /tmp/glitch/g_%03d.png)",
+      "Bash(VID=\"/var/folders/0c/cnpv0zd50c33m5yp9t_w4llw0000gn/T/TemporaryItems/NSIRD_screencaptureui_6apJUn/Screen Recording 2026-06-07 at 19.38.33.mov\" *)"
     ]
   }
 }
