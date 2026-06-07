@@ -11,6 +11,16 @@ export function MusicPlayer() {
   const [playing, setPlaying] = useState(false);
   const [headHidden, setHeadHidden] = useState(false);
 
+  // Safari (incl. iOS) needs the HEVC-alpha .mov; everything else uses VP9 webm.
+  const [headSrc, setHeadSrc] = useState("/head.webm?v=4");
+  useEffect(() => {
+    const ua = navigator.userAgent;
+    const isSafari =
+      /^((?!chrome|android|crios|fxios|edg).)*safari/i.test(ua) ||
+      /iphone|ipad|ipod/i.test(ua);
+    setHeadSrc(isSafari ? "/head.mov?v=4" : "/head.webm?v=4");
+  }, []);
+
   // Rotate the head based on scroll progress
   const { scrollYProgress } = useScroll();
   const rotateRaw = useTransform(scrollYProgress, [0, 1], [0, 720]);
@@ -75,6 +85,8 @@ export function MusicPlayer() {
             className="fixed bottom-[64px] right-[12px] z-50 size-[176px] cursor-pointer"
           >
             <motion.video
+              key={headSrc}
+              src={headSrc}
               poster="/head.webp"
               autoPlay
               loop
@@ -82,11 +94,7 @@ export function MusicPlayer() {
               playsInline
               style={{ rotate }}
               className="size-full object-contain"
-            >
-              {/* HEVC w/ alpha for Safari/iOS, VP9 webm for Chrome/Firefox */}
-              <source src="/head.mov?v=3" type="video/quicktime" />
-              <source src="/head.webm?v=3" type="video/webm" />
-            </motion.video>
+            />
           </motion.button>
         )}
       </AnimatePresence>
