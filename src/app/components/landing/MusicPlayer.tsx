@@ -12,13 +12,13 @@ export function MusicPlayer() {
   const [headHidden, setHeadHidden] = useState(false);
 
   // Safari (incl. iOS) needs the HEVC-alpha .mov; everything else uses VP9 webm.
-  const [headSrc, setHeadSrc] = useState("/head.webm?v=4");
+  const [headSrc, setHeadSrc] = useState("/head.webm?v=5");
   useEffect(() => {
     const ua = navigator.userAgent;
     const isSafari =
       /^((?!chrome|android|crios|fxios|edg).)*safari/i.test(ua) ||
       /iphone|ipad|ipod/i.test(ua);
-    setHeadSrc(isSafari ? "/head.mov?v=4" : "/head.webm?v=4");
+    setHeadSrc(isSafari ? "/head.mov?v=5" : "/head.webm?v=5");
   }, []);
 
   // Rotate the head based on scroll progress

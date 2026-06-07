@@ -111,7 +111,10 @@
       "Bash(ffmpeg -y -i public/head.mov -ss 2 -frames:v 1 -filter_complex 'color=0x151515:s=480x480[bg];[bg][0:v]overlay=shortest=1' /tmp/ondark.png)",
       "Bash(ffmpeg -y -i public/head.mov -ss 2 -frames:v 1 -vf \"alphaextract\" /tmp/alpha.png)",
       "Bash(ffmpeg -y -i public/head.mov -c:v copy -tag:v hvc1 -movflags +faststart public/head.mp4)",
-      "Bash(ffmpeg -y -i public/head.mp4 -ss 2 -frames:v 1 -filter_complex 'color=magenta:s=480x480[bg];[bg][0:v]overlay=shortest=1' /tmp/mp4check.png)"
+      "Bash(ffmpeg -y -i public/head.mp4 -ss 2 -frames:v 1 -filter_complex 'color=magenta:s=480x480[bg];[bg][0:v]overlay=shortest=1' /tmp/mp4check.png)",
+      "Bash(ffmpeg -y -i public/head.mov -ss 2 -frames:v 1 -vf \"alphaextract\" /tmp/a.png)",
+      "Bash(ffmpeg -y -i /tmp/head_alpha2.mov -an -c:v libvpx-vp9 -pix_fmt yuva420p -b:v 0 -crf 30 public/head.webm)",
+      "Bash(ffmpeg -y -i public/head.mov -ss 2 -frames:v 1 -vf \"alphaextract\" /tmp/a2.png)"
     ]
   }
 }
