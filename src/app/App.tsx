@@ -26,6 +26,7 @@ import { PortfolioGallery, type GalleryProject } from "./components/landing/Port
 import { FancyLinkButton } from "./components/landing/FancyButton";
 import { Calendar, FileText } from "lucide-react";
 import { CalEmbed } from "./components/landing/CalEmbed";
+import { Testimonials } from "./components/landing/Testimonials";
 import { MusicPlayer } from "./components/landing/MusicPlayer";
 
 const projects: GalleryProject[] = [
@@ -345,6 +346,7 @@ export default function App() {
       <HeroSection />
       <CompanyExperience />
       <PortfolioGallery projects={projects} />
+      <Testimonials />
       <ContactSection />
       <MusicPlayer />
     </div>
