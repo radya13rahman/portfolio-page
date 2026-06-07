@@ -6,7 +6,7 @@ type CommonProps = {
 };
 
 const baseClass =
-  "relative rounded-[10px] inline-flex items-center justify-center gap-[8px] px-[16px] py-[10px] overflow-hidden cursor-pointer transition-all hover:brightness-110 active:brightness-95 font-normal text-[14px] text-white tracking-[-0.294px] leading-[20px] whitespace-nowrap";
+  "relative rounded-[99999px] inline-flex items-center justify-center gap-[8px] px-[16px] py-[10px] overflow-hidden cursor-pointer transition-all hover:brightness-110 active:brightness-95 font-normal text-[14px] text-white tracking-[-0.294px] leading-[20px] whitespace-nowrap";
 
 const gradientStyle = {
   backgroundImage: [

@@ -20,7 +20,6 @@ import parksImg from "../imports/Screenshot_2026-06-06_at_15.45.53.webp";
 import layersImg from "../imports/Screenshot_2026-06-06_at_15.46.59.webp";
 import dribbbleImg from "../imports/Screenshot_2026-06-06_at_15.49.05.webp";
 import { ImageWithFallback } from "./components/figma/ImageWithFallback";
-import { ScrollProgress } from "./components/landing/ScrollProgress";
 import { LogoMarquee } from "./components/landing/LogoMarquee";
 import { PortfolioGallery, type GalleryProject } from "./components/landing/PortfolioGallery";
 import { FancyLinkButton } from "./components/landing/FancyButton";
@@ -245,7 +244,7 @@ function HeroSection() {
             <a
               href="https://drive.google.com/uc?export=download&id=1JGQatYz2f3qvOLdgpjrvcrAZfqYghyLN"
               download="Radya-Rahman-Resume.pdf"
-              className="inline-flex items-center justify-center gap-[8px] rounded-[10px] px-[16px] py-[10px] text-[14px] font-normal text-white border border-white/20 bg-white/5 hover:bg-white/10 transition-colors max-[400px]:w-full"
+              className="inline-flex items-center justify-center gap-[8px] rounded-[99999px] px-[16px] py-[10px] text-[14px] font-normal text-white border border-white/20 bg-white/5 hover:bg-white/10 transition-colors max-[400px]:w-full"
             >
               <FileText className="size-[16px]" />
               Download Resume
@@ -372,7 +371,6 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[#151515] w-full cursor-none">
       <CustomCursor />
-      <ScrollProgress />
       <NavBar />
       <HeroSection />
       <StatsRow />
