@@ -84,8 +84,8 @@ export function MusicPlayer() {
               className="size-full object-contain"
             >
               {/* HEVC w/ alpha for Safari/iOS, VP9 webm for Chrome/Firefox */}
-              <source src="/head.mov" type='video/quicktime; codecs="hvc1"' />
-              <source src="/head.webm" type="video/webm" />
+              <source src="/head.mov?v=3" type="video/quicktime" />
+              <source src="/head.webm?v=3" type="video/webm" />
             </motion.video>
           </motion.button>
         )}

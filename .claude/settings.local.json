@@ -106,7 +106,12 @@
       "Bash(cwebp -q 88 /tmp/poster2.png -o public/head.webp)",
       "Bash(ffmpeg -hide_banner -encoders)",
       "Bash(ffprobe -v error -show_entries stream=pix_fmt,codec_name,codec_tag_string -of default=noprint_wrappers=1 public/head.mov)",
-      "Bash(ffmpeg -y -i public/head.mov -ss 2 -frames:v 1 -filter_complex 'color=magenta:s=480x480[bg];[bg][0:v]overlay=shortest=1' /tmp/movcheck.png)"
+      "Bash(ffmpeg -y -i public/head.mov -ss 2 -frames:v 1 -filter_complex 'color=magenta:s=480x480[bg];[bg][0:v]overlay=shortest=1' /tmp/movcheck.png)",
+      "Bash(ffmpeg -y -i public/head.mov -ss 2 -frames:v 1 -filter_complex 'color=white:s=480x480[bg];[bg][0:v]overlay=shortest=1' /tmp/onwhite.png)",
+      "Bash(ffmpeg -y -i public/head.mov -ss 2 -frames:v 1 -filter_complex 'color=0x151515:s=480x480[bg];[bg][0:v]overlay=shortest=1' /tmp/ondark.png)",
+      "Bash(ffmpeg -y -i public/head.mov -ss 2 -frames:v 1 -vf \"alphaextract\" /tmp/alpha.png)",
+      "Bash(ffmpeg -y -i public/head.mov -c:v copy -tag:v hvc1 -movflags +faststart public/head.mp4)",
+      "Bash(ffmpeg -y -i public/head.mp4 -ss 2 -frames:v 1 -filter_complex 'color=magenta:s=480x480[bg];[bg][0:v]overlay=shortest=1' /tmp/mp4check.png)"
     ]
   }
 }
