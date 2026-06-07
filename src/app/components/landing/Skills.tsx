@@ -72,7 +72,7 @@ export function Skills() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: si * 0.05 }}
-                    className="inline-flex items-center gap-[8px] px-[14px] py-[8px] rounded-[8px] bg-[#1f1f1f] text-white/70 text-[14px] border border-white/5 hover:border-white/15 hover:text-white transition-all duration-200"
+                    className="inline-flex items-center gap-[8px] px-[14px] py-[8px] bg-[#1f1f1f] text-white/70 text-[14px] border border-white/5 hover:border-white/15 hover:text-white transition-all duration-200"
                   >
                     {skill.icon}
                     {skill.name}

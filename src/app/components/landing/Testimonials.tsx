@@ -56,7 +56,7 @@ export function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: (i % 2) * 0.08 }}
-              className="bg-[#1f1f1f] rounded-[8px] p-[28px] flex flex-col gap-[24px]"
+              className="bg-[#1f1f1f] p-[28px] flex flex-col gap-[24px]"
             >
               {/* Avatar + person info */}
               <div className="flex items-center gap-[14px]">
