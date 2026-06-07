@@ -314,41 +314,6 @@ function ContactSection() {
         <div className="w-full max-w-[1038px]">
           <CalEmbed />
         </div>
-
-        <div className="flex flex-col md:flex-row gap-[24px] md:gap-[80px] opacity-70">
-          <div className="flex gap-[16px] items-center">
-            <div className="size-[24px]">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d={svgPaths.p2ccee40} fill="white" />
-              </svg>
-            </div>
-            <a
-              href="https://www.linkedin.com/in/radya13rahman/"
-              target="_blank"
-              rel="noreferrer"
-              className="text-[#dfdfdf] text-[16px] tracking-[-0.16px] underline"
-            >
-              Radya Amirur Rahman
-            </a>
-          </div>
-          <div className="flex gap-[16px] items-center">
-            <div className="size-[24px]">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d={svgPaths.p7d25a00} fill="white" fillOpacity="0.2" />
-                <path d={svgPaths.p3a84ae00} fill="white" fillOpacity="0.5" />
-                <path d={svgPaths.p3f45c600} fill="white" fillOpacity="0.8" />
-              </svg>
-            </div>
-            <a
-              href="https://layers.to/radyaar"
-              target="_blank"
-              rel="noreferrer"
-              className="text-[#dfdfdf] text-[16px] tracking-[-0.16px] underline"
-            >
-              https://layers.to/radyaar
-            </a>
-          </div>
-        </div>
       </div>
     </section>
   );

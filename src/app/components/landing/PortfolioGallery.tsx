@@ -31,7 +31,7 @@ function Card({ project, className = "" }: { project: GalleryProject; className?
   }, [slides.length]);
 
   const inner = (
-    <div className="relative w-full h-full overflow-hidden rounded-[8px] bg-[#1f1f1f] group">
+    <div className="relative w-full h-full overflow-hidden rounded-none min-[800px]:rounded-[8px] bg-[#1f1f1f] group">
       {slides.map((src, i) => (
         <ImageWithFallback
           key={i}
