@@ -11,14 +11,15 @@ export function MusicPlayer() {
   const [playing, setPlaying] = useState(false);
   const [headHidden, setHeadHidden] = useState(false);
 
-  // Safari (incl. iOS) needs the HEVC-alpha .mov; everything else uses VP9 webm.
-  const [headSrc, setHeadSrc] = useState("/head.webm?v=5");
+  // Safari/iOS renders HEVC-alpha video with a faint box, so use an
+  // animated WebP (clean alpha as <img>) there; webm video elsewhere.
+  const [isSafari, setIsSafari] = useState(false);
   useEffect(() => {
     const ua = navigator.userAgent;
-    const isSafari =
+    setIsSafari(
       /^((?!chrome|android|crios|fxios|edg).)*safari/i.test(ua) ||
-      /iphone|ipad|ipod/i.test(ua);
-    setHeadSrc(isSafari ? "/head.mov?v=5" : "/head.webm?v=5");
+        /iphone|ipad|ipod/i.test(ua),
+    );
   }, []);
 
   // Rotate the head based on scroll progress
@@ -84,17 +85,26 @@ export function MusicPlayer() {
             transition={{ type: "spring", stiffness: 260, damping: 20 }}
             className="fixed bottom-[64px] right-[12px] z-50 size-[176px] cursor-pointer"
           >
-            <motion.video
-              key={headSrc}
-              src={headSrc}
-              poster="/head.webp"
-              autoPlay
-              loop
-              muted
-              playsInline
-              style={{ rotate }}
-              className="size-full object-contain"
-            />
+            {isSafari ? (
+              <motion.img
+                src="/head-anim.webp?v=6"
+                alt="Radya Rahman"
+                style={{ rotate }}
+                className="size-full object-contain"
+                draggable={false}
+              />
+            ) : (
+              <motion.video
+                src="/head.webm?v=6"
+                poster="/head.webp"
+                autoPlay
+                loop
+                muted
+                playsInline
+                style={{ rotate }}
+                className="size-full object-contain"
+              />
+            )}
           </motion.button>
         )}
       </AnimatePresence>

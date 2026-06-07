@@ -114,7 +114,9 @@
       "Bash(ffmpeg -y -i public/head.mp4 -ss 2 -frames:v 1 -filter_complex 'color=magenta:s=480x480[bg];[bg][0:v]overlay=shortest=1' /tmp/mp4check.png)",
       "Bash(ffmpeg -y -i public/head.mov -ss 2 -frames:v 1 -vf \"alphaextract\" /tmp/a.png)",
       "Bash(ffmpeg -y -i /tmp/head_alpha2.mov -an -c:v libvpx-vp9 -pix_fmt yuva420p -b:v 0 -crf 30 public/head.webm)",
-      "Bash(ffmpeg -y -i public/head.mov -ss 2 -frames:v 1 -vf \"alphaextract\" /tmp/a2.png)"
+      "Bash(ffmpeg -y -i public/head.mov -ss 2 -frames:v 1 -vf \"alphaextract\" /tmp/a2.png)",
+      "Bash(ffmpeg -y -i /tmp/head_alpha2.mov -vf \"fps=12,scale=240:-1\" /tmp/hf/f_%03d.png)",
+      "Bash(ffmpeg -y -i /tmp/head_alpha2.mov -vf \"fps=10,scale=190:-1\" /tmp/hf2/f_%03d.png)"
     ]
   }
 }
