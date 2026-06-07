@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import svgPaths from "../imports/LandingPagePortfolioDesktop/svg-tt1e977ne4";
 import heroImage from "../imports/image-hero.webp";
@@ -145,7 +145,21 @@ function HeroPortrait() {
   );
 }
 
+function useJakartaTime() {
+  const [time, setTime] = useState(() =>
+    new Date().toLocaleTimeString("en-US", { timeZone: "Asia/Jakarta", hour: "numeric", minute: "2-digit", hour12: true })
+  );
+  useEffect(() => {
+    const id = setInterval(() => {
+      setTime(new Date().toLocaleTimeString("en-US", { timeZone: "Asia/Jakarta", hour: "numeric", minute: "2-digit", hour12: true }));
+    }, 1000);
+    return () => clearInterval(id);
+  }, []);
+  return time;
+}
+
 function HeroSection() {
+  const jakartaTime = useJakartaTime();
   const sectionRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -194,7 +208,7 @@ function HeroSection() {
               </li>
               <li>
                 <span className="font-bold">Time Zone </span>
-                : <span className="text-[#dfdfdf]">Jakarta (GMT+7)</span>
+                : <span className="text-[#dfdfdf]">Jakarta (GMT+7) — </span><span className="text-[#dfdfdf] font-mono tabular-nums">{jakartaTime}</span>
               </li>
             </motion.ul>
           </div>
