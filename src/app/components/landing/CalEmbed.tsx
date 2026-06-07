@@ -15,7 +15,7 @@ export function CalEmbed() {
   // full-screen and touches the bottom edge on small screens.
   useEffect(() => {
     const css =
-      "@media (max-width:767px){.modal-box{margin:0!important;inset:auto 0 0 0!important;transform:none!important;width:100%!important;max-width:100%!important;height:auto!important;max-height:92dvh!important;border-radius:16px 16px 0 0!important;overflow:hidden!important;}.modal-box .body{width:100%!important;}}";
+      "@media (max-width:767px){.modal-box{margin:0!important;inset:auto 0 0 0!important;transform:none!important;width:100%!important;max-width:100%!important;height:auto!important;max-height:92dvh!important;border-radius:0!important;overflow:hidden!important;}.modal-box .body{width:100%!important;}}";
     const inject = (el: Element) => {
       const sr = (el as HTMLElement).shadowRoot;
       if (sr && !sr.querySelector("style[data-rad-modal]")) {
