@@ -22,6 +22,19 @@ export function MusicPlayer() {
     );
   }, []);
 
+  // Hide the music button once the footer scrolls into view
+  const [footerInView, setFooterInView] = useState(false);
+  useEffect(() => {
+    const footer = document.querySelector("footer");
+    if (!footer) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => setFooterInView(entry.isIntersecting),
+      { rootMargin: "0px 0px -40px 0px" },
+    );
+    obs.observe(footer);
+    return () => obs.disconnect();
+  }, []);
+
   // Rotate the head based on scroll progress
   const { scrollYProgress } = useScroll();
   const rotateRaw = useTransform(scrollYProgress, [0, 1], [0, 720]);
@@ -113,7 +126,9 @@ export function MusicPlayer() {
         onClick={toggle}
         aria-label={playing ? "Pause music" : "Play music"}
         title={`${playing ? "Pause" : "Play"} · ${TRACK_TITLE}`}
-        className="fixed bottom-[24px] right-[24px] z-50 flex items-center gap-[8px] bg-black/70 hover:bg-black/85 text-white rounded-full pl-[12px] pr-[16px] py-[10px] backdrop-blur-md border border-white/10 transition-colors"
+        className={`fixed bottom-[24px] right-[24px] z-50 flex items-center gap-[8px] bg-black/70 hover:bg-black/85 text-white rounded-full pl-[12px] pr-[16px] py-[10px] backdrop-blur-md border border-white/10 transition-all duration-300 ${
+          footerInView ? "opacity-0 translate-y-[16px] pointer-events-none" : "opacity-100 translate-y-0"
+        }`}
       >
         {playing ? (
           <Pause className="size-[16px]" />
