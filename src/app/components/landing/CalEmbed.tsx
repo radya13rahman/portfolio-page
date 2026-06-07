@@ -10,6 +10,28 @@ export function CalEmbed() {
     })();
   }, []);
 
+  // Cal's modal-box has a 20px margin (gap at the bottom on phones).
+  // Inject a style into its (open) shadow root so the modal goes
+  // full-screen and touches the bottom edge on small screens.
+  useEffect(() => {
+    const css =
+      "@media (max-width:767px){.modal-box{margin:0!important;inset:0!important;height:100%!important;max-height:100%!important;width:100%!important;max-width:100%!important;border-radius:0!important;}}";
+    const inject = (el: Element) => {
+      const sr = (el as HTMLElement).shadowRoot;
+      if (sr && !sr.querySelector("style[data-rad-modal]")) {
+        const s = document.createElement("style");
+        s.setAttribute("data-rad-modal", "");
+        s.textContent = css;
+        sr.appendChild(s);
+      }
+    };
+    const scan = () => document.querySelectorAll("cal-modal-box").forEach(inject);
+    scan();
+    const obs = new MutationObserver(scan);
+    obs.observe(document.body, { childList: true, subtree: true });
+    return () => obs.disconnect();
+  }, []);
+
   return (
     <>
       {/* Phones: open Cal as a full-screen modal so the inline iframe
