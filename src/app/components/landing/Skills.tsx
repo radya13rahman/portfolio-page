@@ -1,18 +1,50 @@
 import { motion } from "motion/react";
 import { GridPattern } from "./GridPattern";
+import {
+  siFigma, siFramer, siSketch,
+  siReact, siTailwindcss, siHtml5, siTypescript, siAnthropic,
+} from "simple-icons";
+import { Users, TestTube2, BarChart2, Lightbulb, Pen, Camera, Layers } from "lucide-react";
+
+function SiIcon({ icon, size = 16 }: { icon: { path: string; hex: string }; size?: number }) {
+  return (
+    <svg role="img" viewBox="0 0 24 24" width={size} height={size} fill="currentColor" className="shrink-0 opacity-70">
+      <path d={icon.path} />
+    </svg>
+  );
+}
 
 const skillGroups = [
   {
     label: "Design",
-    skills: ["Figma", "Framer", "Adobe Illustrator", "Adobe Photoshop", "Sketch", "ProtoPie"],
+    skills: [
+      { name: "Figma", icon: <SiIcon icon={siFigma} /> },
+      { name: "Framer", icon: <SiIcon icon={siFramer} /> },
+      { name: "Adobe Illustrator", icon: <Pen size={16} className="shrink-0 opacity-70" /> },
+      { name: "Adobe Photoshop", icon: <Camera size={16} className="shrink-0 opacity-70" /> },
+      { name: "Sketch", icon: <SiIcon icon={siSketch} /> },
+      { name: "ProtoPie", icon: <Layers size={16} className="shrink-0 opacity-70" /> },
+    ],
   },
   {
     label: "Research",
-    skills: ["User Interviews", "Usability Testing", "Competitive Analysis", "Design Thinking"],
+    skills: [
+      { name: "User Interviews", icon: <Users size={16} className="shrink-0 opacity-70" /> },
+      { name: "Usability Testing", icon: <TestTube2 size={16} className="shrink-0 opacity-70" /> },
+      { name: "Competitive Analysis", icon: <BarChart2 size={16} className="shrink-0 opacity-70" /> },
+      { name: "Design Thinking", icon: <Lightbulb size={16} className="shrink-0 opacity-70" /> },
+    ],
   },
   {
     label: "Development",
-    skills: ["React", "Tailwind CSS", "HTML / CSS", "TypeScript", "Claude Code", "Figma AI"],
+    skills: [
+      { name: "React", icon: <SiIcon icon={siReact} /> },
+      { name: "Tailwind CSS", icon: <SiIcon icon={siTailwindcss} /> },
+      { name: "HTML / CSS", icon: <SiIcon icon={siHtml5} /> },
+      { name: "TypeScript", icon: <SiIcon icon={siTypescript} /> },
+      { name: "Claude Code", icon: <SiIcon icon={siAnthropic} /> },
+      { name: "Figma AI", icon: <SiIcon icon={siFigma} /> },
+    ],
   },
 ];
 
@@ -40,9 +72,10 @@ export function Skills() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: si * 0.05 }}
-                    className="px-[14px] py-[8px] rounded-[8px] bg-[#1f1f1f] text-white/70 text-[14px] border border-white/5 hover:border-white/15 hover:text-white transition-all duration-200"
+                    className="inline-flex items-center gap-[8px] px-[14px] py-[8px] rounded-[8px] bg-[#1f1f1f] text-white/70 text-[14px] border border-white/5 hover:border-white/15 hover:text-white transition-all duration-200"
                   >
-                    {skill}
+                    {skill.icon}
+                    {skill.name}
                   </motion.span>
                 ))}
               </div>
