@@ -91,8 +91,8 @@ export function PortfolioGallery({ projects }: { projects: GalleryProject[] }) {
   return (
     <section id="work" className="bg-[#0A0A0A] py-[60px] md:py-[80px] relative overflow-hidden">
       <GridPattern diagonal className="hidden min-[768px]:block" />
-      <div className="relative w-full min-[1000px]:w-[70%] max-w-[1442px] mx-auto px-0 min-[768px]:px-[48px] min-[1024px]:px-[64px] flex flex-col gap-[24px]">
-        <div className="flex flex-col gap-[16px] min-[600px]:flex-row min-[600px]:items-center min-[600px]:justify-between mb-[16px] px-[24px] min-[768px]:px-0">
+      <div className="relative w-full min-[1000px]:w-[70%] max-w-[1442px] mx-auto px-[24px] min-[768px]:px-[48px] min-[1024px]:px-[64px] flex flex-col gap-[24px]">
+        <div className="flex flex-col gap-[16px] min-[600px]:flex-row min-[600px]:items-center min-[600px]:justify-between mb-[16px]">
           <h2 className="text-white text-[24px] md:text-[32px] tracking-[0.32px] leading-[1.1]">
             Selected Works
           </h2>
