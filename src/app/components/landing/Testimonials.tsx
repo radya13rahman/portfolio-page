@@ -6,6 +6,7 @@ const testimonials = [
     title: "Full Stack Developer",
     agency: "Techflouu",
     initials: "KS",
+    color: "bg-gradient-to-br from-blue-600 to-blue-800",
     text: "Working with Radya on our website project was a fantastic experience. He doesn't just create visually stunning interfaces; his proactive communication makes the entire project lifecycle incredibly smooth. If you need a reliable UI/UX designer who truly understands how to collaborate effectively and deliver modern, user-centric designs, Radya is the person you want on your team.",
   },
   {
@@ -13,6 +14,7 @@ const testimonials = [
     title: "Ops and Product Management",
     agency: "Techflouu",
     initials: "TE",
+    color: "bg-gradient-to-br from-rose-500 to-pink-700",
     text: "Radya is a kind and creative individual who brings a positive attitude to the workplace. It was a pleasure having him on the team, and I appreciated his contributions to our UI/UX projects.",
   },
   {
@@ -20,6 +22,7 @@ const testimonials = [
     title: "UI/UX Designer",
     agency: "Apple Developer Academy",
     initials: "HN",
+    color: "bg-gradient-to-br from-purple-600 to-violet-800",
     text: "Radya and I are fellow learners at the Apple Developer Academy and he consistently impresses me with his advanced prototyping skills and deep expertise in Figma. His determination to learn and experiment with new techniques is truly inspiring. His ability to provide constructive feedback and actively participate in brainstorming sessions makes him an invaluable partner in any design process.",
   },
   {
@@ -27,13 +30,14 @@ const testimonials = [
     title: "iOS Developer",
     agency: "Apple Developer Academy · BCA Digital",
     initials: "GY",
+    color: "bg-gradient-to-br from-orange-500 to-amber-700",
     text: "I am pleased to provide my endorsement for Radya, a skilled UI/UX professional with whom I've had the pleasure of collaborating. Radya's exceptional design acumen has consistently produced visually appealing and user-centric solutions. His ability to think innovatively and outside the box has greatly contributed to the success of our projects.",
   },
 ];
 
 export function Testimonials() {
   return (
-    <section className="bg-[#0A0A0A] py-[60px] md:py-[80px]">
+    <section id="testimonials" className="bg-[#0A0A0A] py-[60px] md:py-[80px]">
       <div className="w-full min-[1000px]:w-[70%] max-w-[1442px] mx-auto px-[24px] min-[768px]:px-[48px] min-[1024px]:px-[64px] flex flex-col gap-[24px]">
         <div className="flex flex-col gap-[8px] mb-[16px]">
           <h2 className="text-white text-[24px] md:text-[32px] tracking-[0.32px] leading-[1.1]">
@@ -54,8 +58,8 @@ export function Testimonials() {
             >
               {/* Avatar + person info */}
               <div className="flex items-center gap-[14px]">
-                <div className="size-[44px] rounded-full bg-white/10 flex items-center justify-center shrink-0">
-                  <span className="text-white text-[13px] font-medium tracking-[0.5px]">{t.initials}</span>
+                <div className={`size-[44px] rounded-full flex items-center justify-center shrink-0 ${t.color}`}>
+                  <span className="text-white text-[13px] font-semibold tracking-[0.5px]">{t.initials}</span>
                 </div>
                 <div className="flex flex-col gap-[2px]">
                   <span className="text-white text-[14px] font-medium leading-tight">{t.name}</span>

@@ -28,6 +28,18 @@ import { Calendar, FileText } from "lucide-react";
 import { CalEmbed } from "./components/landing/CalEmbed";
 import { Testimonials } from "./components/landing/Testimonials";
 import { MusicPlayer } from "./components/landing/MusicPlayer";
+import { NavBar } from "./components/landing/NavBar";
+import { Footer } from "./components/landing/Footer";
+import { CustomCursor } from "./components/landing/CustomCursor";
+import { StatsRow } from "./components/landing/StatsRow";
+import { Skills } from "./components/landing/Skills";
+
+// ── Availability config ── change this to update the badge site-wide
+const AVAILABILITY = {
+  available: true,
+  seats: 3,
+  period: "Q3 2026",
+};
 
 const projects: GalleryProject[] = [
   {
@@ -179,7 +191,7 @@ function HeroSection() {
   };
 
   return (
-    <section ref={sectionRef} className="bg-[#151515] relative overflow-hidden min-h-[900px] md:min-h-[900px]">
+    <section ref={sectionRef} id="hero" className="bg-[#151515] relative overflow-hidden min-h-[900px] md:min-h-[900px]">
       <motion.div style={{ y: bgY }} className="absolute inset-0 -top-[10%] h-[120%] pointer-events-none">
         <ImageWithFallback
           src={heroBgImage}
@@ -195,12 +207,16 @@ function HeroSection() {
           className="flex flex-col gap-[40px] items-start w-full md:w-[590px] relative z-10"
         >
           <div className="flex flex-col gap-[24px] w-full">
-            <motion.div variants={item} className="inline-flex items-center gap-[8px] self-start rounded-full border border-white/20 bg-white/5 px-[12px] py-[6px]">
+            <motion.div variants={item} className={`inline-flex items-center gap-[8px] self-start rounded-full border px-[12px] py-[6px] ${AVAILABILITY.available ? "border-white/20 bg-white/5" : "border-white/10 bg-white/[0.03]"}`}>
               <span className="relative flex size-[6px]">
-                <span className="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 animate-ping" />
-                <span className="relative inline-flex size-[6px] rounded-full bg-green-400" />
+                <span className={`absolute inline-flex h-full w-full rounded-full opacity-75 animate-ping ${AVAILABILITY.available ? "bg-green-400" : "bg-red-400"}`} />
+                <span className={`relative inline-flex size-[6px] rounded-full ${AVAILABILITY.available ? "bg-green-400" : "bg-red-400"}`} />
               </span>
-              <span className="text-[12px] text-white/80 tracking-[0.2px]">3 Seats Available · Q3 2026</span>
+              <span className="text-[12px] text-white/80 tracking-[0.2px]">
+                {AVAILABILITY.available
+                  ? `${AVAILABILITY.seats} Seats Available · ${AVAILABILITY.period}`
+                  : `Not available · Check back soon`}
+              </span>
             </motion.div>
             <motion.h1 variants={item} className="text-white text-[36px] md:text-[56px] tracking-[0.48px] leading-[1.1]">
               A Product Designer <br />
@@ -253,7 +269,7 @@ function HeroSection() {
 
 function CompanyExperience() {
   return (
-    <section className="bg-[#171717] py-[60px] md:py-[80px] relative overflow-hidden">
+    <section id="about" className="bg-[#171717] py-[60px] md:py-[80px] relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none opacity-[0.04]" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`, backgroundSize: '200px 200px' }} />
       <div className="relative max-w-[1442px] mx-auto px-[24px] min-[768px]:px-[48px] min-[1024px]:px-[64px] min-[1200px]:px-[120px] flex flex-col min-[1200px]:flex-row min-[1200px]:items-center min-[1200px]:justify-between gap-[40px]">
         <div className="flex flex-col gap-[16px] max-w-[603px]">
@@ -339,15 +355,33 @@ function ContactSection() {
   );
 }
 
+function useLenis() {
+  useEffect(() => {
+    let lenis: import("lenis").default | null = null;
+    import("lenis").then(({ default: Lenis }) => {
+      lenis = new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
+      const raf = (time: number) => { lenis!.raf(time); requestAnimationFrame(raf); };
+      requestAnimationFrame(raf);
+    });
+    return () => { lenis?.destroy(); };
+  }, []);
+}
+
 export default function App() {
+  useLenis();
   return (
-    <div className="min-h-screen bg-[#151515] w-full">
+    <div className="min-h-screen bg-[#151515] w-full cursor-none">
+      <CustomCursor />
       <ScrollProgress />
+      <NavBar />
       <HeroSection />
+      <StatsRow />
       <CompanyExperience />
       <PortfolioGallery projects={projects} />
+      <Skills />
       <Testimonials />
       <ContactSection />
+      <Footer />
       <MusicPlayer />
     </div>
   );
