@@ -1,5 +1,5 @@
-import { siLinkedin, siDribbble } from "simple-icons";
-import { Layers, FileText } from "lucide-react";
+import { siDribbble } from "simple-icons";
+import { Layers, FileText, Linkedin } from "lucide-react";
 
 function SiIcon({ path }: { path: string }) {
   return (
@@ -13,7 +13,7 @@ const links = [
   {
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/radya13rahman/",
-    icon: <SiIcon path={siLinkedin.path} />,
+    icon: <Linkedin size={15} />,
   },
   {
     label: "Layers",
