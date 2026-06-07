@@ -87,7 +87,7 @@ export function MusicPlayer() {
           >
             {isSafari ? (
               <motion.img
-                src="/head-anim.webp?v=6"
+                src="/head-anim.webp?v=7"
                 alt="Radya Rahman"
                 style={{ rotate }}
                 className="size-full object-contain"

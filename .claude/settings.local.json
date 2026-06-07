@@ -117,7 +117,11 @@
       "Bash(ffmpeg -y -i public/head.mov -ss 2 -frames:v 1 -vf \"alphaextract\" /tmp/a2.png)",
       "Bash(ffmpeg -y -i /tmp/head_alpha2.mov -vf \"fps=12,scale=240:-1\" /tmp/hf/f_%03d.png)",
       "Bash(ffmpeg -y -i /tmp/head_alpha2.mov -vf \"fps=10,scale=190:-1\" /tmp/hf2/f_%03d.png)",
-      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}\\\\n\" http://localhost:5173/)"
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}\\\\n\" http://localhost:5173/)",
+      "Bash(ffmpeg -y -i \"src/imports/Screenshot_2026-06-06_at_15.45.53.webp\" -vf \"scale=480:-1\" /tmp/sc.png)",
+      "Bash(ffprobe -v error -show_entries stream=width,height -of csv=p=0 src/imports/Screenshot_2026-06-06_at_15.45.53.webp)",
+      "Bash(echo \"dims now: $\\(ffprobe -v error -show_entries stream=width,height -of csv=p=0 src/imports/Screenshot_2026-06-06_at_15.45.53.webp\\)\")",
+      "Bash(awk '{print $5, $9}')"
     ]
   }
 }
