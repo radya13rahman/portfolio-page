@@ -308,7 +308,8 @@ function ContactSection() {
       </motion.div>
       <div className="relative max-w-[1442px] mx-auto px-[24px] min-[768px]:px-[48px] min-[1024px]:px-[64px] min-[1200px]:px-[120px] flex flex-col gap-[60px] md:gap-[80px] items-center">
         <h2 className="text-white text-[24px] md:text-[32px] tracking-[0.32px] leading-[1.1] text-center">
-          Ready to build great product together
+          Ready to build <br />
+          great product together
         </h2>
 
         <div className="w-full max-w-[1038px]">
