@@ -19,12 +19,12 @@ export function NavBar() {
         scrolled ? "bg-[#0a0a0a]/80 backdrop-blur-xl border-b border-white/5" : ""
       }`}
     >
-      <div className="max-w-[1442px] mx-auto px-[24px] min-[768px]:px-[48px] min-[1024px]:px-[64px] min-[1200px]:px-[120px] h-[56px] flex items-center justify-between">
-        <a href="#" className="hover:opacity-70 transition-opacity">
+      <div className="max-w-[1442px] mx-auto px-[24px] min-[768px]:px-[48px] min-[1024px]:px-[64px] min-[1200px]:px-[120px] h-[56px] flex items-center gap-[32px]">
+        <a href="#" className="hover:opacity-70 transition-opacity shrink-0">
           <img src="/favicon.png" alt="Radya Rahman" className="size-[32px] rounded-full" />
         </a>
 
-        <nav className="hidden min-[600px]:flex items-center gap-[32px]">
+        <nav className="hidden min-[600px]:flex items-center gap-[28px]">
           {[
             { label: "Work", href: "#work" },
             { label: "Reviews", href: "#testimonials" },
@@ -39,13 +39,6 @@ export function NavBar() {
             </a>
           ))}
         </nav>
-
-        <a
-          href="#contact"
-          className="text-[13px] text-white bg-white/10 hover:bg-white/20 transition-colors duration-200 px-[14px] py-[7px] rounded-full"
-        >
-          Let's work →
-        </a>
       </div>
     </motion.header>
   );
