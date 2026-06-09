@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { useInView } from "motion/react";
+import { motion, useInView } from "motion/react";
 
 function Counter({ to, suffix = "" }: { to: number; suffix?: string }) {
   const [count, setCount] = useState(0);
@@ -34,94 +34,134 @@ const stats = [
   { value: 1, suffix: "", label: "WWDC23 Winner" },
 ];
 
-/** Gold gradient shared by the ornamental frame strokes */
+/** Warm gold gradient (with a slow shimmer) shared by the frame strokes */
 function GoldDefs() {
   return (
     <svg width="0" height="0" className="absolute" aria-hidden="true">
       <defs>
         <linearGradient id="jvGold" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#f6e3ad" />
-          <stop offset="38%" stopColor="#cBA75a" />
-          <stop offset="62%" stopColor="#9c7b2e" />
-          <stop offset="100%" stopColor="#e9cd86" />
+          <stop offset="0%" stopColor="#ffe9b0" />
+          <stop offset="32%" stopColor="#e8b75a" />
+          <stop offset="58%" stopColor="#b07d2a" />
+          <stop offset="82%" stopColor="#d99f3f" />
+          <stop offset="100%" stopColor="#ffdf94" />
+          {/* slow metallic shimmer */}
+          <animateTransform
+            attributeName="gradientTransform"
+            type="rotate"
+            from="0 0.5 0.5"
+            to="360 0.5 0.5"
+            dur="9s"
+            repeatCount="indefinite"
+          />
         </linearGradient>
       </defs>
     </svg>
   );
 }
 
-/** A single Javanese-style sulur (scrollwork) corner ornament. */
+/** A single Javanese-style sulur (scrollwork) corner ornament, filigreed. */
 function Corner({ className }: { className: string }) {
   return (
     <svg
-      width="72"
-      height="72"
-      viewBox="0 0 72 72"
+      width="84"
+      height="84"
+      viewBox="0 0 84 84"
       className={className}
       fill="none"
       stroke="url(#jvGold)"
-      strokeWidth="1.4"
+      strokeWidth="1.3"
       strokeLinecap="round"
       strokeLinejoin="round"
       aria-hidden="true"
     >
       {/* corner bracket with a soft ogee */}
-      <path d="M8 24 V13 a5 5 0 0 1 5-5 h11" />
-      {/* lower graceful vine + curl */}
-      <path d="M8 30 C8 44 18 50 27 45 C19 52 9 47 7 35" />
-      {/* right graceful vine + curl */}
-      <path d="M30 8 C44 8 50 18 45 27 C52 19 47 9 35 7" />
+      <path d="M9 28 V15 a6 6 0 0 1 6-6 h13" />
+      {/* outer graceful vines + curls */}
+      <path d="M9 34 C9 50 20 57 31 51 C21 59 10 53 8 39" />
+      <path d="M34 9 C50 9 57 20 51 31 C59 21 53 10 39 8" />
       {/* inner paired leaves */}
-      <path d="M17 17 C27 20 31 30 27 40" opacity="0.6" />
-      <path d="M17 17 C20 27 30 31 40 27" opacity="0.6" />
+      <path d="M19 19 C30 22 34 33 30 44" opacity="0.6" />
+      <path d="M19 19 C22 30 33 34 44 30" opacity="0.6" />
+      {/* secondary inner scroll (filigree) */}
+      <path d="M20 30 C16 30 15 35 18 37 C20 38 23 36 22 33" opacity="0.5" />
+      <path d="M30 20 C30 16 35 15 37 18 C38 20 36 23 33 22" opacity="0.5" />
       {/* tendril tips */}
-      <path d="M27 40 c5 -2 7 -7 6 -12" opacity="0.45" />
-      <path d="M40 27 c-2 5 -7 7 -12 6" opacity="0.45" />
-      {/* bud */}
-      <circle cx="13" cy="13" r="2" fill="url(#jvGold)" stroke="none" />
+      <path d="M31 51 c7 -2 10 -9 9 -16" opacity="0.4" />
+      <path d="M51 31 c-2 7 -9 10 -16 9" opacity="0.4" />
+      {/* buds & dotted accents */}
+      <circle cx="15" cy="15" r="2.2" fill="url(#jvGold)" stroke="none" />
+      <circle cx="40" cy="9" r="1.1" fill="url(#jvGold)" stroke="none" opacity="0.7" />
+      <circle cx="9" cy="40" r="1.1" fill="url(#jvGold)" stroke="none" opacity="0.7" />
+      <circle cx="30" cy="44" r="1.3" fill="url(#jvGold)" stroke="none" opacity="0.55" />
+      <circle cx="44" cy="30" r="1.3" fill="url(#jvGold)" stroke="none" opacity="0.55" />
     </svg>
   );
 }
 
-/** Small lozenge accent for the centre of an edge. */
+/** Small lozenge accent with curls for the centre of an edge. */
 function EdgeAccent({ className }: { className: string }) {
   return (
     <svg
-      width="56"
-      height="18"
-      viewBox="0 0 56 18"
+      width="84"
+      height="20"
+      viewBox="0 0 84 20"
       className={className}
       fill="none"
       stroke="url(#jvGold)"
-      strokeWidth="1.4"
+      strokeWidth="1.3"
       strokeLinecap="round"
       strokeLinejoin="round"
       aria-hidden="true"
     >
-      <path d="M28 3 L34 9 L28 15 L22 9 Z" />
-      <path d="M22 9 H6" opacity="0.6" />
-      <path d="M34 9 H50" opacity="0.6" />
-      <circle cx="28" cy="9" r="1.4" fill="url(#jvGold)" stroke="none" />
+      <path d="M42 4 L48 10 L42 16 L36 10 Z" />
+      <path d="M36 10 H20" opacity="0.6" />
+      <path d="M48 10 H64" opacity="0.6" />
+      {/* small end curls */}
+      <path d="M20 10 C14 10 12 6 15 4" opacity="0.45" />
+      <path d="M64 10 C70 10 72 6 69 4" opacity="0.45" />
+      <circle cx="42" cy="10" r="1.4" fill="url(#jvGold)" stroke="none" />
     </svg>
   );
 }
 
-/** Ornamental gold frame that wraps the stats grid. */
+/** Ornamental gold frame that wraps the stats grid, revealing on scroll-in. */
 function OrnateFrame() {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-60px" });
   return (
-    <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+    <motion.div
+      ref={ref}
+      aria-hidden="true"
+      initial={{ opacity: 0, scale: 0.975 }}
+      animate={
+        inView
+          ? {
+              opacity: 1,
+              scale: 1,
+              filter: [
+                "drop-shadow(0 0 0px rgba(224,176,80,0))",
+                "drop-shadow(0 0 12px rgba(224,176,80,0.55))",
+                "drop-shadow(0 0 5px rgba(224,176,80,0.3))",
+              ],
+            }
+          : {}
+      }
+      transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+      className="pointer-events-none absolute inset-0"
+    >
       {/* double border line */}
-      <div className="absolute inset-[14px] border border-[#caa75a]/35" />
-      <div className="absolute inset-[18px] border border-[#caa75a]/15" />
+      <div className="absolute inset-[14px] border border-[#d6a24a]/40" />
+      <div className="absolute inset-[18px] border border-[#d6a24a]/18" />
       {/* corner flourishes */}
-      <Corner className="absolute top-[4px] left-[4px]" />
-      <Corner className="absolute top-[4px] right-[4px] -scale-x-100" />
-      <Corner className="absolute bottom-[4px] left-[4px] -scale-y-100" />
-      <Corner className="absolute bottom-[4px] right-[4px] -scale-100" />
+      <Corner className="absolute top-[2px] left-[2px]" />
+      <Corner className="absolute top-[2px] right-[2px] -scale-x-100" />
+      <Corner className="absolute bottom-[2px] left-[2px] -scale-y-100" />
+      <Corner className="absolute bottom-[2px] right-[2px] -scale-100" />
       {/* centre edge accents */}
       <EdgeAccent className="absolute top-[7px] left-1/2 -translate-x-1/2" />
       <EdgeAccent className="absolute bottom-[7px] left-1/2 -translate-x-1/2" />
-    </div>
+    </motion.div>
   );
 }
 
