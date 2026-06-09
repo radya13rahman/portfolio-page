@@ -3,13 +3,6 @@ import { motion } from "motion/react";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 import { GridPattern } from "./GridPattern";
 import {
-  MotifDefs,
-  CloudScrollDivider,
-  HeritageBackdrop,
-  EntryCurtain,
-  CardCorners,
-} from "./JavaneseMotifs";
-import {
   Select,
   SelectContent,
   SelectItem,
@@ -68,7 +61,6 @@ function Card({ project, className = "" }: { project: GalleryProject; className?
           ))}
         </div>
       )}
-      <CardCorners />
     </div>
   );
 
@@ -98,15 +90,8 @@ export function PortfolioGallery({ projects }: { projects: GalleryProject[] }) {
 
   return (
     <section id="work" className="bg-[#0A0A0A] py-[60px] md:py-[80px] relative overflow-hidden">
-      <MotifDefs />
       <GridPattern diagonal />
-      <HeritageBackdrop />
-      <EntryCurtain />
       <div className="relative w-full min-[1000px]:w-[70%] max-w-[1442px] mx-auto px-[24px] min-[768px]:px-[48px] min-[1024px]:px-[64px] flex flex-col gap-[24px]">
-        {/* Javanese cloud-scroll divider — transitions into the section */}
-        <div className="mb-[8px]">
-          <CloudScrollDivider />
-        </div>
         <div className="flex flex-col gap-[16px] min-[600px]:flex-row min-[600px]:items-center min-[600px]:justify-between mb-[16px] px-[20px] min-[1000px]:px-0">
           <h2 className="text-white text-[24px] md:text-[32px] tracking-[0.32px] leading-[1.1]">
             Selected Works
@@ -131,10 +116,10 @@ export function PortfolioGallery({ projects }: { projects: GalleryProject[] }) {
             return (
               <motion.div
                 key={`${project.name}-${i}`}
-                initial={{ opacity: 0, y: 40, clipPath: "inset(8% 8% 8% 8%)" }}
-                whileInView={{ opacity: 1, y: 0, clipPath: "inset(0% 0% 0% 0%)" }}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: (i % 3) * 0.08 }}
+                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: (i % 3) * 0.08 }}
                 className={`${isWide ? "min-[800px]:col-span-2" : ""}`}
               >
                 <Card project={project} className="aspect-[16/10] block w-full" />
