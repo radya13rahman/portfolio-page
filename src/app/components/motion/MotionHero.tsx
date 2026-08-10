@@ -62,6 +62,7 @@ export function MotionHero() {
 
         <motion.div variants={item} className="pt-[8px]">
           <VideoPlaceholder
+            ambient
             src={HERO.video.src}
             poster={HERO.video.poster}
             label={HERO.video.title}

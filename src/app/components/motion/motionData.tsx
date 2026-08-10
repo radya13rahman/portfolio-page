@@ -17,10 +17,8 @@ import hannahImg from "../../../imports/avatar-hannah.webp";
  * ─────────────────────────────────────────────────────────────────────────────
  */
 
-/** ⚠️ TODO: the one blank left in the real content — the address you want
- *  publicly visible on the page. Fill this in and the sidebar line goes live
- *  as a mailto link; while it's empty the line renders a visible placeholder. */
-export const EMAIL = "";
+/** Publicly visible contact address; renders as a mailto link in the sidebar. */
+export const EMAIL = "radyaamirur@gmail.com";
 
 /** Underlined inline link used in the sidebar copy. */
 export function SideLink({ href, children }: { href: string; children: ReactNode }) {
