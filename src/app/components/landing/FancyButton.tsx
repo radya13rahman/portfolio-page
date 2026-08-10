@@ -8,7 +8,8 @@ type CommonProps = {
 const baseClass =
   "relative rounded-[99999px] inline-flex items-center justify-center gap-[8px] px-[16px] py-[10px] overflow-hidden cursor-pointer transition-all hover:brightness-110 active:brightness-95 font-normal text-[14px] text-white tracking-[-0.294px] leading-[20px] whitespace-nowrap";
 
-const gradientStyle = {
+/** The site's primary-CTA fill. Exported so other surfaces can reuse it. */
+export const gradientStyle = {
   backgroundImage: [
     "linear-gradient(180deg, rgba(255,255,255,0.40) 0%, rgba(255,255,255,0.05) 45%, rgba(255,255,255,0.15) 100%)",
     "linear-gradient(180deg, #f08a73 0%, #e35c43 50%, #ff7a3d 100%)",

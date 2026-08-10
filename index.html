@@ -5,10 +5,14 @@
       
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <!--
+        Page-specific <head> tags (title, description, canonical, Open Graph,
+        Twitter, JSON-LD) are emitted per route at build time from
+        src/app/seo.ts — see src/prerender.tsx. Adding them here too would
+        duplicate every tag on every page. The title below is only a fallback
+        for the dev server, where no prerender runs.
+      -->
       <title>Radya Rahman — Product Designer & Researcher</title>
-      <meta name="description" content="Radya Amirur Rahman is a Product Designer and Researcher with 4+ years of experience in iOS and Web Interfaces." />
-      <meta name="robots" content="index, follow" />
-      <link rel="canonical" href="https://radyaar.com/" />
 
       <!-- Preconnect to Cal.com embed -->
       <link rel="preconnect" href="https://app.cal.com" />
@@ -18,52 +22,7 @@
       <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
       <link rel="apple-touch-icon" href="/favicon.png" />
 
-      <!-- Open Graph / Social -->
-      <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://radyaar.com/" />
-      <meta property="og:title" content="Radya Rahman — Product Designer & Researcher" />
-      <meta property="og:description" content="Radya Amirur Rahman is a Product Designer and Researcher with 4+ years of experience in iOS and Web Interfaces." />
-      <meta property="og:image" content="https://radyaar.com/og-image.png" />
-      <meta property="og:image:secure_url" content="https://radyaar.com/og-image.png" />
-      <meta property="og:image:type" content="image/png" />
-      <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="630" />
-      <meta property="og:image:alt" content="Radya Rahman — Product Designer & Researcher" />
-
-      <!-- Twitter Card -->
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Radya Rahman — Product Designer & Researcher" />
-      <meta name="twitter:description" content="Radya Amirur Rahman is a Product Designer and Researcher with 4+ years of experience in iOS and Web Interfaces." />
-      <meta name="twitter:image" content="https://radyaar.com/og-image.png" />
       <style>html, body { height: 100%; margin: 0; } #root { height: 100%; }</style>
-
-      <!-- Structured data: Person / ProfilePage -->
-      <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "ProfilePage",
-        "mainEntity": {
-          "@type": "Person",
-          "name": "Radya Amirur Rahman",
-          "alternateName": "Radya Rahman",
-          "url": "https://radyaar.com/",
-          "image": "https://radyaar.com/favicon.png",
-          "jobTitle": "Product Designer & Researcher",
-          "description": "Product Designer and Researcher with 4+ years of experience in iOS and Web Interfaces.",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Surakarta",
-            "addressCountry": "ID"
-          },
-          "knowsAbout": ["Product Design", "UX Research", "iOS Design", "Web Design", "Figma", "Prototyping", "Usability Testing"],
-          "sameAs": [
-            "https://www.linkedin.com/in/radya13rahman/",
-            "https://dribbble.com/radyaar",
-            "https://layers.to/radyaar"
-          ]
-        }
-      }
-      </script>
 
     </head>
 

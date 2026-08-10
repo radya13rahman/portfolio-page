@@ -6,4 +6,6 @@
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
+  <!-- /motion is intentionally absent: it ships noindex until the real copy
+       and footage land. Add it back when seo.ts drops `noindex` on that page. -->
 </urlset>

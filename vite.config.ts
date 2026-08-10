@@ -27,6 +27,9 @@ export default defineConfig({
     vitePrerenderPlugin({
       renderTarget: '#root',
       prerenderScript: path.resolve(__dirname, 'src/prerender.tsx'),
+      // Routes that aren't linked from the home page still need static HTML.
+      // Keep this in sync with the route table in src/app/routes.tsx.
+      additionalPrerenderRoutes: ['/motion'],
     }),
   ],
   resolve: {
