@@ -104,8 +104,7 @@ export const SIDEBAR = {
 
 /** Section anchors for the "Jump to:" nav and the scroll-spy highlight. */
 export const JUMP_LINKS = [
-  { id: "launch-videos", label: "Launch Videos" },
-  { id: "portfolio", label: "Full Portfolio" },
+  { id: "launch-videos", label: "Selected Work" },
   { id: "reviews", label: "Reviews" },
   { id: "pricing", label: "Pricing" },
   { id: "faq", label: "FAQ's" },
@@ -132,15 +131,16 @@ export const HERO: {
   /** Giant repeating text behind the hero. */
   watermark: "just do it",
   video: {
-    title: "Showreel 2026",
-    // src: "/videos/showreel.mp4",
-    // poster: "/videos/showreel-poster.webp",
+    title: "Showreel",
+    src: "/videos/showcase.mp4",
+    poster: "/videos/showcase-poster.webp",
+    duration: "1:25",
   },
 };
 
 // ── Projects ─────────────────────────────────────────────────────────────────
-// Real projects, in the recommended carousel order. `duration` is intentionally
-// omitted — it belongs to a real cut, so it appears once `src` is filled in.
+// Three entries, each backed by a real cut. Encodes live in public/videos/;
+// the commands that produced them are in ./VIDEOS.md.
 
 export type VideoItem = {
   title: string;
@@ -153,70 +153,33 @@ export type VideoItem = {
   poster?: string;
 };
 
-/** Carousel picks 1–3, given the large treatment. */
 export const LAUNCH_VIDEOS: VideoItem[] = [
   {
     title: "Appnigma AI",
     client: "Appnigma",
     tags: "Product · AI · Salesforce & HubSpot",
     href: "https://appnigma.ai/",
-    // Transcoded from the 4K master (33MB) down to 1080p H.264 for the web.
-    // Encoding commands for adding more: ./VIDEOS.md
     src: "/videos/appnigma-ai.mp4",
     poster: "/videos/appnigma-ai-poster.webp",
     duration: "0:20",
   },
   {
-    title: "New York State Parks Proposal",
-    client: "Concept",
-    tags: "Web · Product Design",
-    href: "https://parks.framer.website/",
-  },
-  {
-    title: "Lightbridge",
-    client: "Lightbridge",
-    tags: "Mobile Engagement Platform",
-    href: "https://lightbridgelife.com/",
-  },
-];
-
-/** Carousel picks 4–9. */
-export const PORTFOLIO: VideoItem[] = [
-  {
-    title: "Rally",
-    client: "Rally",
-    tags: "Tennis Community App",
-    href: "https://rallyracquet.com/",
+    title: "Gyde",
+    client: "Gyde",
+    tags: "Mobile App · Product Design",
+    // No public URL supplied for Gyde yet — add `href` and the title links out.
+    src: "/videos/gyde.mp4",
+    poster: "/videos/gyde-poster.webp",
+    duration: "3:00",
   },
   {
     title: "Walturn",
     client: "Walturn",
     tags: "Product Engineering",
     href: "https://walturn.com/",
-  },
-  {
-    title: "Sprout Fetch",
-    client: "Personal",
-    tags: "Experimental Web Project",
-    href: "https://sprout-fetch-44130875.figma.site/",
-  },
-  {
-    title: "Radfolio",
-    client: "Personal",
-    tags: "Previous Personal Portfolio",
-    href: "https://radyaar.framer.website/",
-  },
-  {
-    title: "Layers",
-    client: "Personal",
-    tags: "Design Experiments",
-    href: "https://layers.to/radyaar",
-  },
-  {
-    title: "Dribbble",
-    client: "Personal",
-    tags: "UI · Visual Archive",
-    href: "https://dribbble.com/radyaar",
+    src: "/videos/walturn.mp4",
+    poster: "/videos/walturn-poster.webp",
+    duration: "2:29",
   },
 ];
 

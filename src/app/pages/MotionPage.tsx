@@ -3,7 +3,6 @@ import { CalEmbed } from "../components/landing/CalEmbed";
 import { MotionSidebar } from "../components/motion/MotionSidebar";
 import { MotionHero } from "../components/motion/MotionHero";
 import {
-  FullPortfolio,
   LaunchVideos,
   MotionFaq,
   MotionPricing,
@@ -46,7 +45,6 @@ export default function MotionPage() {
       <main className={RAIL}>
         <MotionHero />
         <LaunchVideos />
-        <FullPortfolio />
         <MotionReviews />
         <MotionPricing />
         <MotionFaq />

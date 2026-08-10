@@ -8,7 +8,7 @@ import {
   AccordionTrigger,
 } from "@radix-ui/react-accordion";
 import { gradientStyle } from "../landing/FancyButton";
-import { FAQS, LAUNCH_VIDEOS, PORTFOLIO, PRICING, REVIEWS } from "./motionData";
+import { FAQS, LAUNCH_VIDEOS, PRICING, REVIEWS } from "./motionData";
 import { VideoPlaceholder } from "./VideoPlaceholder";
 
 const PAD = "px-[24px] min-[768px]:px-[48px] min-[1024px]:px-[56px] min-[1440px]:px-[80px]";
@@ -74,9 +74,9 @@ export function LaunchVideos() {
   return (
     <Section
       id="launch-videos"
-      eyebrow="Featured work"
-      title="Launch videos"
-      subtitle="The three leads from the project order. Cards stay as placeholders until the cuts are dropped in."
+      eyebrow="Selected work"
+      title="Recent projects"
+      subtitle="Three builds, each with the full cut. Press play — they run with sound."
     >
       <div className="flex flex-col gap-[72px]">
         {LAUNCH_VIDEOS.map((v, i) => (
@@ -94,31 +94,6 @@ export function LaunchVideos() {
               {v.blurb && (
                 <p className="max-w-[46ch] text-[15px] leading-[1.65] text-white/40">{v.blurb}</p>
               )}
-            </div>
-          </article>
-        ))}
-      </div>
-    </Section>
-  );
-}
-
-export function FullPortfolio() {
-  return (
-    <Section
-      id="portfolio"
-      eyebrow="Everything else"
-      title="Full portfolio"
-      subtitle="The rest of the project order. Every tile is a placeholder card until footage is dropped in."
-    >
-      <div className="grid grid-cols-1 gap-[28px] min-[720px]:grid-cols-2">
-        {PORTFOLIO.map((v, i) => (
-          <article key={i} className="flex flex-col gap-[14px]">
-            <VideoPlaceholder src={v.src} poster={v.poster} label={v.title} duration={v.duration} />
-            <div className="flex items-baseline justify-between gap-[16px]">
-              <h3 className="text-[15px] font-medium text-white">
-                <ProjectLink href={v.href}>{v.title}</ProjectLink>
-              </h3>
-              <span className="shrink-0 text-[13px] text-white/30">{v.tags}</span>
             </div>
           </article>
         ))}
