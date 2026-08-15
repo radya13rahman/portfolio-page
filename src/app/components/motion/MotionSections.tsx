@@ -10,6 +10,7 @@ import {
 import { gradientStyle } from "../landing/FancyButton";
 import { FAQS, LAUNCH_VIDEOS, PRICING, REVIEWS } from "./motionData";
 import { VideoPlaceholder } from "./VideoPlaceholder";
+import { BendCard } from "./BendCard";
 
 const PAD = "px-[24px] min-[768px]:px-[48px] min-[1024px]:px-[56px] min-[1440px]:px-[80px]";
 
@@ -80,7 +81,8 @@ export function LaunchVideos() {
     >
       <div className="flex flex-col gap-[72px]">
         {LAUNCH_VIDEOS.map((v, i) => (
-          <article key={i} className="flex flex-col gap-[20px]">
+          <BendCard key={i}>
+          <article className="flex flex-col gap-[20px]">
             <VideoPlaceholder src={v.src} poster={v.poster} label={v.title} duration={v.duration} />
             <div className="flex flex-col gap-[12px] min-[768px]:flex-row min-[768px]:items-start min-[768px]:justify-between min-[768px]:gap-[48px]">
               <div className="flex flex-col gap-[4px]">
@@ -96,6 +98,7 @@ export function LaunchVideos() {
               )}
             </div>
           </article>
+          </BendCard>
         ))}
       </div>
     </Section>

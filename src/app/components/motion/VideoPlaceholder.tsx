@@ -60,8 +60,10 @@ export function VideoPlaceholder({
 
   // React can drop the `muted` attribute during hydration, which would let an
   // unmuted autoplay be blocked outright — so pin it on the element directly.
+  // Ambient only: the click-to-play cards must stay unmuted, and applying this
+  // to them silently strips the audio from every project film.
   useEffect(() => {
-    if (videoRef.current) videoRef.current.muted = muted;
+    if (allowAmbient && videoRef.current) videoRef.current.muted = muted;
   }, [muted, allowAmbient]);
 
   const start = () => {
